@@ -7,18 +7,52 @@
         background: url("wtflogo.png");
         background-repeat: no-repeat;
         background-size: 600px 400px;
-        background-position: 5% 5%;
+        background-position: 50% 5%;
+      }
+      
+      #enterZC 
+      {
+          position:absolute;
+          top:270px;
+          left:280px;
+          width:100px;
+          height:15px;
+      }
+      #numb
+      {
+          position:absolute;
+          top:310px;
+          left:280px;
+          width:100px;
+          height:15px;
+      }
+      
+      #TextCategories 
+      {
+          position:absolute;
+          top:270px;
+          left:390px;
+          width:300px;
+          height:15px;
+      }
+      
+      #FormCategories 
+      {
+          position:absolute;
+          top:310px;
+          left:500px;
       }
     </style>
   </head>
-<body>
-<center>
-  <img src="wtflogo.jpg" alt="What the Food Logo" style="width:500px;height:300px;">
-  <p>Enter zip code</p> <input type="text" onkeypress="validate(event)" id="numb" placeholder='#####' align="right">
+
+  
+  <body>
+  <center>
+  <p id="enterZC">Enter zip code</p> <input type="text" onkeypress="validate(event)" id="numb" placeholder='#####' align="right">
   <br>
-  <p>Select Categories</p>
- <form name="InventoryList" method="post">
-          <select name="SelBranch" class="bnotes" style = 'overflow: hidden' multiple="multiple" id = 'select'>
+  <p id="TextCategories">Select Categories</p>
+ <form id="FormCategories" name="InventoryList" method="post">
+          <select name="SelBranch" class="bnotes" multiple="multiple" id = 'select' size=5>
           <option value="Breakfast">Breakfast</option>
           <option value="Lunch">Lunch</option>
           <option value="Dinner">Dinner</option>
@@ -28,10 +62,6 @@
           <option value="Chinese">Chinese</option>
           <option value="Desserts">Desserts</option>
           </select>
-<script>
-  var select = document.getElementById('select');
-select.size = select.length;
-   </script>
          <input type="button" name="ViewReport" value="View" class="bnotes" onclick="GetInventory();">
 
    </form>
