@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body
+      {
+        background: url("wtflogo.jpg");
+        background-repeat: no-repeat;
+        background-size: 600px 400px;
+        background-position: 5% 5%;
+      }
+    </style>
+  </head>
+<body>
+<center>
+  <img src="wtflogo.jpg" alt="What the Food Logo" style="width:500px;height:300px;">
+  <p>Enter zip code</p> <input type="text" onkeypress="validate(event)" id="numb" placeholder='#####' align="right">
+  <br>
+  <p>Select Categories</p>
+ <form name="InventoryList" method="post">
+          <select name="SelBranch" class="bnotes" style = 'overflow: hidden' multiple="multiple" id = 'select'>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Pizza">Pizza</option>
+          <option value="Fast Food">Fast Food</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Desserts">Desserts</option>
+          </select>
+<script>
+  var select = document.getElementById('select');
+select.size = select.length;
+   </script>
+         <input type="button" name="ViewReport" value="View" class="bnotes" onclick="GetInventory();">
+
+   </form>
+  <p id="demo"></p>
+  <p id ="dem"></p>
+  
+   <script language="JavaScript">
+       function validate(evt) 
+       {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode( key );
+        var regex = /[0-9]|\./;
+            if( !regex.test(key) ) 
+            {
+                theEvent.returnValue = false;
+                if(theEvent.preventDefault) theEvent.preventDefault();
+            }
+       }
+       
+       function GetInventory()
+       {
+         var InvForm = document.forms.InventoryList;
+         var SelBranchVal = "";
+         var x = 0;         
+         var y;
+    // Get the value of the input field with id="numb"
+    y = document.getElementById("numb").value;
+         if (y.length != 5)
+         {
+            window.alert("Please enter in a valid zip code"); //pop up for invalid zip code
+         }
+         else
+         {
+         for (x=0;x<InvForm.SelBranch.length;x++)
+         {
+            if (InvForm.SelBranch[x].selected)
+            {
+             //alert(InvForm.SelBranch[x].value);
+             SelBranchVal = SelBranchVal + " " + InvForm.SelBranch[x].value;
+            }
+         }
+         document.getElementById("dem").innerHTML = SelBranchVal;
+    document.getElementById("demo").innerHTML = y;
+         }
+       }
+
+
+  </script>
+</center>
+</body>
+</html> 
