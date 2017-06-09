@@ -1,24 +1,25 @@
-
 'use strict';
- 
+
 const yelp = require('yelp-fusion');
 
-const clientId = 'pWmZBQr8unmmV2mD6AtDRw';
-const clientSecret = 'XZtHv2xIR1SJ3hv5vIMV0rT3kmShh3AYw6P9AUO8qxY9Q9exsWoBZkRuFVERCTFk';
+// Place holders for Yelp Fusion's OAuth 2.0 credentials. Grab them
+// from https://www.yelp.com/developers/v3/manage_app
+const clientId = '<YOUR_CLIENT_ID>';
+const clientSecret = '<YOUR_CLIENT_SECRET>';
 
-const token = yelp.accessToken(clientId, clientSecret).then(response => {
-  console.log(response.jsonBody.access_token);
-}).catch(e => {
-  console.log(e);
-});
-
-const client = yelp.client(token);
- 
-client.search({
+const searchRequest = {
   term:'Four Barrel Coffee',
   location: 'san francisco, ca'
-}).then(response => {
-  console.log(response.jsonBody.businesses[0].name);
+};
+
+yelp.accessToken(clientId, clientSecret).then(response => {
+  const client = yelp.client(response.jsonBody.access_token);
+
+  client.search(searchRequest).then(response => {
+    const firstResult = response.jsonBody.businesses[0];
+    const prettyJson = JSON.stringify(firstResult, null, 4);
+    console.log(prettyJson);
+  });
 }).catch(e => {
   console.log(e);
 });
