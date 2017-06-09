@@ -1,4 +1,4 @@
-const req=require(jquery);
+const $ =require("jquery");
 
 var settings = {
   "async": true,
