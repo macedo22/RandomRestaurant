@@ -15,8 +15,6 @@ var settings = {
   }
 }
 
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js";
-
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
