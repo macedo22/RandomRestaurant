@@ -9,11 +9,11 @@ var settings = {
     "cache-control": "no-cache",
     "postman-token": "4e9aa322-6810-d246-721c-799788e6c8d6"
   },
-  //"data": {
-    //"client_id": "pWmZBQr8unmmV2mD6AtDRw",
-    //"client_secret": "XZtHv2xIR1SJ3hv5vIMV0rT3kmShh3AYw6P9AUO8qxY9Q9exsWoBZkRuFVERCTFk",
-    //"grant_type": "client_credentials"
-  //}
+  "data": {
+    "client_id": "pWmZBQr8unmmV2mD6AtDRw",
+    "client_secret": "XZtHv2xIR1SJ3hv5vIMV0rT3kmShh3AYw6P9AUO8qxY9Q9exsWoBZkRuFVERCTFk",
+    "grant_type": "client_credentials"
+  }
 }
 
 $.ajax(settings).done(function (response) {
