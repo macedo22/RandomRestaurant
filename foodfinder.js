@@ -1,4 +1,4 @@
-function () {
+(function () {
 
 var API_HOST = "https://api.yelp.com";
 var SEARCH_PATH = "/v3/businesses/search";
