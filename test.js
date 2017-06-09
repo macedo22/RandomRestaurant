@@ -8,11 +8,6 @@ var settings = {
     "cache-control": "no-cache",
     "postman-token": "be8712b9-45f6-acd5-4e98-d00f3d7d9025"
   },
-  "data": {
-    "client_id": "pWmZBQr8unmmV2mD6AtDRw",
-    "client_secret": "XZtHv2xIR1SJ3hv5vIMV0rT3kmShh3AYw6P9AUO8qxY9Q9exsWoBZkRuFVERCTFk",
-    "grant_type": "client_credentials"
-  }
 }
 
 $.ajax(settings).done(function (response) {
