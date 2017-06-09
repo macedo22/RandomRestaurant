@@ -1,3 +1,5 @@
+const req=require(jquery);
+
 var settings = {
   "async": true,
   "crossDomain": true,
