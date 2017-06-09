@@ -1,4 +1,4 @@
-$(function () {
+(function () {
 
 var API_HOST = "https://api.yelp.com";
 var SEARCH_PATH = "/v3/businesses/search";
@@ -14,7 +14,7 @@ var SEARCH_RADIUS = 500;        // radius is in meters
 var SORT_BY = "distance";
 
 
-$.ajax(API_HOST + TOKEN_PATH, {
+ajax(API_HOST + TOKEN_PATH, {
     type: "POST",
     data: {
         grant_type: GRANT_TYPE,
