@@ -1,12 +1,12 @@
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.yelp.com/oauth2/token",
-  "method": "POST",
+  "url": "https://api.yelp.com/v3/businesses/search?location=92679",
+  "method": "GET",
   "headers": {
+    "authorization": "Bearer 9TJvWv_jji-AYcjG2pZ8ntlJ5PLZAMRTdw78Lxeu_HfcN05yPqu74Zym9CNi6k7cYC8j52VLQm7Y2S33eFZ_lkX26PV-4-mc3wyeSPi2YTmkXgHuRn7m5cRM06M1WXYx",
     "cache-control": "no-cache",
-    "postman-token": "b7cc69b9-5fe9-8226-8490-49a58187c8d9",
-    "content-type": "application/x-www-form-urlencoded"
+    "postman-token": "4e9aa322-6810-d246-721c-799788e6c8d6"
   },
   "data": {
     "client_id": "pWmZBQr8unmmV2mD6AtDRw",
@@ -15,6 +15,6 @@ var settings = {
   }
 }
 
-jQuery.ajax(settings).done(function (response) {
+$.ajax(settings).done(function (response) {
   console.log(response);
 });
