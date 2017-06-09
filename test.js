@@ -1,4 +1,4 @@
-const req=require(jquery);
+var requirejs = require('requirejs');
 
 var settings = {
   "async": true,
