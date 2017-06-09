@@ -4,55 +4,66 @@
     <style>
       body
       {
-        background: url("wtflogo.png");
+        background: url("wtflogo.jpg");
         background-repeat: no-repeat;
-        background-size: 600px 400px;
+        background-size: 550px 320px;
         background-position: 50% 5%;
       }
       
-      #enterZC 
+      #Location
       {
           position:absolute;
-          top:270px;
-          left:280px;
+          top:45%;
+          left:37%;
           width:100px;
           height:15px;
       }
-      #numb
+      #ZipCode
       {
           position:absolute;
-          top:310px;
-          left:280px;
-          width:100px;
+          top:47%;
+          left:51%;
+          width:135px;
           height:15px;
+          font:Arial;
+          font-size:15px;
+          padding:10px;
+          border: solid 5px #53b4fd;
+          transition:box-shadow 0.3s, border 0.3s;
       }
       
-      #TextCategories 
+      #INeed 
       {
           position:absolute;
-          top:270px;
-          left:390px;
-          width:300px;
+          top:60%;
+          left:37%;
+          width:100px;
           height:15px;
       }
       
       #FormCategories 
       {
           position:absolute;
-          top:310px;
-          left:500px;
+          top:60%;
+          left:51%;
+          font:Arial;
+          font-size:8px;
+          padding:5px;
+          border: solid 5px #53b4fd;
+          transition:box-shadow 0.3s, border 0.3s;
       }
     </style>
   </head>
 
   
   <body>
-  <center>
-  <p id="enterZC">Enter zip code</p> <input type="text" onkeypress="validate(event)" id="numb" placeholder='#####' align="right">
-  <br>
-  <p id="TextCategories">Select Categories</p>
- <form id="FormCategories" name="InventoryList" method="post">
-          <select name="SelBranch" class="bnotes" multiple="multiple" id = 'select' size=5>
+    <center>
+        <img id="Location" src="location.jpg" alt="Enter Your Location: " style="width:180px;height:70px;"> 
+        <input type="text" onkeypress="validate(event)" id="ZipCode" placeholder='#####' align="right">
+        <br>
+        <img id="INeed" src="ineed.jpg" alt="Choose a category: " style="width:170px;height:60px;">
+        <form id="FormCategories" name="InventoryList" method="post">
+          <select name="SelBranch" class="bnotes" multiple="multiple" id ='select' size=5>
           <option value="Breakfast">Breakfast</option>
           <option value="Lunch">Lunch</option>
           <option value="Dinner">Dinner</option>
@@ -63,12 +74,14 @@
           <option value="Desserts">Desserts</option>
           </select>
          <input type="button" name="ViewReport" value="View" class="bnotes" onclick="GetInventory();">
-
-   </form>
-  <p id="demo"></p>
-  <p id ="dem"></p>
+        </form>
   
-   <script language="JavaScript">
+        <p id="demo"></p>
+        <p id ="dem"></p>
+    </center>
+  
+    <script language="JavaScript">
+        <!--This function prevents the user from inputting letters as the zipcode-->
        function validate(evt) 
        {
         var theEvent = evt || window.event;
@@ -88,20 +101,20 @@
          var SelBranchVal = "";
          var x = 0;         
          var y;
-    // Get the value of the input field with id="numb"
-    y = document.getElementById("numb").value;
-         if (y.length != 5)
-         {
-            window.alert("Please enter in a valid zip code"); //pop up for invalid zip code
-         }
-         else
-         {
+        // Get the value of the input field with id="ZipCode"
+        y = document.getElementById("ZipCode").value;
+        if (y.length != 5)
+        {
+            window.alert("Please enter in a valid zip code");
+        }
+        else
+        {
          for (x=0;x<InvForm.SelBranch.length;x++)
-         {
-            if (InvForm.SelBranch[x].selected)
             {
-             //alert(InvForm.SelBranch[x].value);
-             SelBranchVal = SelBranchVal + " " + InvForm.SelBranch[x].value;
+                if (InvForm.SelBranch[x].selected)
+                {
+                //alert(InvForm.SelBranch[x].value);
+                SelBranchVal = SelBranchVal + " " + InvForm.SelBranch[x].value;
             }
          }
          document.getElementById("dem").innerHTML = SelBranchVal;
@@ -111,6 +124,5 @@
 
 
   </script>
-</center>
 </body>
 </html> 
