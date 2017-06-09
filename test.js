@@ -1,25 +1,20 @@
-'use strict';
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.yelp.com/v3/businesses/search?location=92679",
+  "method": "GET",
+  "headers": {
+    "authorization": "Bearer 9TJvWv_jji-AYcjG2pZ8ntlJ5PLZAMRTdw78Lxeu_HfcN05yPqu74Zym9CNi6k7cYC8j52VLQm7Y2S33eFZ_lkX26PV-4-mc3wyeSPi2YTmkXgHuRn7m5cRM06M1WXYx",
+    "cache-control": "no-cache",
+    "postman-token": "be8712b9-45f6-acd5-4e98-d00f3d7d9025"
+  },
+  "data": {
+    "client_id": "pWmZBQr8unmmV2mD6AtDRw",
+    "client_secret": "XZtHv2xIR1SJ3hv5vIMV0rT3kmShh3AYw6P9AUO8qxY9Q9exsWoBZkRuFVERCTFk",
+    "grant_type": "client_credentials"
+  }
+}
 
-const yelp = require('yelp-fusion');
-
-// Place holders for Yelp Fusion's OAuth 2.0 credentials. Grab them
-// from https://www.yelp.com/developers/v3/manage_app
-const clientId = '<YOUR_CLIENT_ID>';
-const clientSecret = '<YOUR_CLIENT_SECRET>';
-
-const searchRequest = {
-  term:'Four Barrel Coffee',
-  location: 'san francisco, ca'
-};
-
-yelp.accessToken(clientId, clientSecret).then(response => {
-  const client = yelp.client(response.jsonBody.access_token);
-
-  client.search(searchRequest).then(response => {
-    const firstResult = response.jsonBody.businesses[0];
-    const prettyJson = JSON.stringify(firstResult, null, 4);
-    console.log(prettyJson);
-  });
-}).catch(e => {
-  console.log(e);
+$.ajax(settings).done(function (response) {
+  console.log(response);
 });
