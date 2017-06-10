@@ -25,7 +25,7 @@ $.ajax(settings).done(function (response) {
 ********************************/
 /*******************************/
 /*Alex's Test Code*/
- app.use('Access-Control-Allow-Origin':'*');
+ app.use('Access-Control-Allow-Origin'+'*');
 
  var settings = {
   "async": true,
