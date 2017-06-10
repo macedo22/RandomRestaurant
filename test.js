@@ -1,6 +1,27 @@
 var settings = {
   "async": true,
   "crossDomain": true,
+  "url": "https://api.yelp.com/oauth2/token",
+  "method": "POST",
+  "headers": {
+    "cache-control": "no-cache",
+    "postman-token": "07234ca9-8a12-73c7-2769-551972ecbd84",
+    "content-type": "application/x-www-form-urlencoded"
+  },
+  "data": {
+    "grant_type": "client_credentials",
+    "client_id": "pWmZBQr8unmmV2mD6AtDRw",
+    "client_secret": "XZtHv2xIR1SJ3hv5vIMV0rT3kmShh3AYw6P9AUO8qxY9Q9exsWoBZkRuFVERCTFk"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
   "url": "https://api.yelp.com/v3/businesses/search?location=92679",
   "method": "GET",
   "headers": {
