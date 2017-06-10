@@ -1,26 +1,6 @@
-//Grace's test code:
-
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://api.yelp.com/oauth2/token",
-  "method": "POST",
-  "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "2cc616ed-3aa2-14bf-f5e0-9a1b1524da35",
-    "content-type": "application/x-www-form-urlencoded"
-  },
-  "data": {
-    "grant_type": "client_credentials",
-    "client_id": "pWmZBQr8unmmV2mD6AtDRw",
-    "client_secret": "XZtHv2xIR1SJ3hv5vIMV0rT3kmShh3AYw6P9AUO8qxY9Q9exsWoBZkRuFVERCTFk"
-  }
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-
+/****************************/
+/*
+Grace's test code:
 var settings = {
   "async": true,
   "crossDomain": true,
@@ -42,11 +22,10 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 
-
+********************************/
 /*******************************/
 /*Alex's Test Code*/
-/****************************/
-/*
+
  var settings = {
   "async": true,
   "crossDomain": true,
@@ -64,4 +43,4 @@ $.ajax(settings).done(function (response) {
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
-********************************/
+
