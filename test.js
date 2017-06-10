@@ -1,3 +1,6 @@
+/****************************/
+/*Grace's test code:
+
 var settings = {
   "async": true,
   "crossDomain": true,
@@ -14,6 +17,28 @@ var settings = {
     "client_secret": "XZtHv2xIR1SJ3hv5vIMV0rT3kmShh3AYw6P9AUO8qxY9Q9exsWoBZkRuFVERCTFk"
   }
 }
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+********************************/
+
+/*******************************/
+/*Alex's Test Code*/
+
+ var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.yelp.com/v3/businesses/search?location=92877",
+  "method": "GET",
+  "headers": {
+    "authorization": "Bearer NGhq-Yzq3eJ3BBrTqCVD_TfcB53VKAjLF9RF824bRBsArPgweRWEsEk9XLwInhe1uHDigm9K01SJ7uTCCtvgJPRLKuBXyO7SNygkQHWy6nrww8pVD5TTxKk6tEU4WXYx",
+    "cache-control": "no-cache",
+    "postman-token": "679e25ad-8b27-71ec-b2cc-712b2ecc54b5"
+  }
+};
+
+/*******************************/
 
 $.ajax(settings).done(function (response) {
   console.log(response);
