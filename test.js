@@ -25,7 +25,7 @@ $.ajax(settings).done(function (response) {
 ********************************/
 /*******************************/
 /*Alex's Test Code*/
- app.use('Access-Control-Allow-Origin'+'*');
+ header("Access-Control-Allow-Origin: https://api.yelp.com/v3/businesses/search?location=92877");
 
  var settings = {
   "async": true,
