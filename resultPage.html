@@ -15,8 +15,10 @@ and open the template in the editor.
         <script>
             var path = window.location.href;
             var parameters = path.split("?")[1];
+            var x = (mainStr.split("&").length - 1)
             var para1 = parameters.split("&")[0];
             var para1var = para1.split("=")[1];
+            document.getElementById("write").innerHTML = x;
         </script>
     </body>
 </html>
