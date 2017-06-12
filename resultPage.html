@@ -16,10 +16,18 @@ and open the template in the editor.
             var path = window.location.href;
             var parameters = path.split("?")[1];
             var x = (parameters.split("&").length - 1)
-            var para1 = parameters.split("&")[0];
-            var para1var = para1.split("=")[1];
-            document.getElementById("write").innerHTML = para1var;
-            document.getElementById("write").innerHTML = x;
+            var y = 0;
+            var para[];
+            var paravar[];
+            for (y = 0; y < x-1; y++);
+            {
+                para[y] = parameters.split("&")[y];
+            }
+            for (y = 0; y < x-1; y++);
+            {
+                var paravar[y] = para1.split("=")[1];
+            }
+            document.getElementById("write").innerHTML = paravar[1];
         </script>
     </body>
 </html>
