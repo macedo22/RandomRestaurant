@@ -11,28 +11,28 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <p id = "demo">Hi</p>
+        <p id = "demo">Hello</p>
         <script>
             var path = window.location.href;
             var parameters = path.split("?")[1];
-            var x = (parameters.split("&").length - 1)
+            var x = (parameters.split("&").length - 1);
             var y = 0;
             var para[];
             var paravar[];
-            //for (y = 0; y < x-1; y++);
-            //{
-             //  para.push(parameters.split("&")[y]);
-            //}
-            //for (y = 0; y < x-1; y++);
-            //{
-            //    paravar.push(para[y].split("=")[1]);
-            //}
+            for (y = 0; y < x-1; y++)
+            {
+              para.push(parameters.split("&")[y]);
+            }
+            for (y = 0; y < x-1; y++)
+            {
+                paravar.push(para[y].split("=")[1]);
+            }
             var para1 = parameters.split("&")[0];
             var para2 = parameters.split("&")[1];
             var para1var = para1.split("=")[1];
             var para2var = para2.split("=")[1];
             //document.getElementById("demo").innerHTML = parameters;
-            document.getElementById("demo").innerHTML = parameters;
+            document.getElementById("demo").innerHTML = para[1];
             //document.getElementById("demo").innerHTML = para[1];
         </script>
     </body>
