@@ -80,7 +80,7 @@
     <br>
     
     <img id="INeed" src="ineed.jpg" alt="Choose a category: " style="width:170px;height:60px;">
-    <form id="FormCategories" name="InventoryList" method="GET" action = "resultPage.html">
+    <form id="FormCategories" name="InventoryList" method="GET" action = "resultPage.html" onSubmit = "getInventory()">
       <input type="text" onkeypress="validate(event)" id="ZipCode" name = "ZipCode" placeholder='#####' align="right" required>
         <select name="SelBranch" class="bnotes" multiple="multiple" id ='select' size=5>
             <option value="Breakfast">Breakfast</option>
