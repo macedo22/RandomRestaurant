@@ -17,18 +17,18 @@ and open the template in the editor.
             var parameters = path.split("?")[1];
             var x = (parameters.split("&").length - 1)
             var y = 0;
-            var para[];
-            var paravar[];
-            for (y = 0; y < x-1; y++);
-            {
-                para[y] = parameters.split("&")[y];
-            }
-            for (y = 0; y < x-1; y++);
-            {
-                var paravar[y] = para[y].split("=")[1];
-            }
+            //var para[];
+            //var paravar[];
+            //for (y = 0; y < x-1; y++);
+            //{
+             //   para[y] = parameters.split("&")[y];
+            //}
+            //for (y = 0; y < x-1; y++);
+            //{
+            //    var paravar[y] = para[y].split("=")[1];
+            //}
             document.getElementById("demo").innerHTML = parameters;
-            document.getElementById("demo").innerHTML = paravar[1];
+            //document.getElementById("demo").innerHTML = paravar[1];
         </script>
     </body>
 </html>
