@@ -11,7 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <p id = "write"></p>
+        <p id = "write">Hello</p>
         <script>
             var path = window.location.href;
             var parameters = path.split("?")[1];
@@ -27,8 +27,8 @@ and open the template in the editor.
             {
                 var paravar[y] = para[y].split("=")[1];
             }
-            document.getElementById("write").innerHTML = parameters;
-            document.getElementById("write").innerHTML = paravar[1];
+            document.getElementById("demo").innerHTML = parameters;
+            document.getElementById("demo").innerHTML = paravar[1];
         </script>
     </body>
 </html>
