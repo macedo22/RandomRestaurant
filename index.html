@@ -80,7 +80,7 @@
     <br>
     
     <img id="INeed" src="ineed.jpg" alt="Choose a category: " style="width:170px;height:60px;">
-    <form id="FormCategories" name="InventoryList" method="GET" action = "resultPage.html">
+    <form id="FormCategories" name="InventoryList" method="GET" action = "resultPage.html" onSubmit = "validate()">
       <input type="text" onkeypress="validate(event)" id="ZipCode" name = "ZipCode" placeholder='#####' align="right" required>
         <select name="SelBranch" class="bnotes" multiple="multiple" id ='select' size=5>
             <option value="Breakfast">Breakfast</option>
@@ -113,31 +113,17 @@
             }
         }
        
-       function GetInventory()
-       {
-         var InvForm = document.forms.InventoryList;
-         var SelBranchVal = "";
-         var x = 0;         
+       function validate()
+       {        
          var y;
         // Get the value of the input field with id="ZipCode"
         y = document.getElementById("ZipCode").value;
         if (y.length != 5)
         {
             window.alert("Please enter in a valid zip code");
+          return false;
         }
-        else
-        {
-         for (x=0;x<InvForm.SelBranch.length;x++)
-            {
-                if (InvForm.SelBranch[x].selected)
-                {
-                //alert(InvForm.SelBranch[x].value);
-                SelBranchVal = SelBranchVal + " " + InvForm.SelBranch[x].value;
-            }
-        }
-        document.getElementById("dem").innerHTML = SelBranchVal;
-        document.getElementById("demo").innerHTML = y;
-        }
+     return true;
        }
     </script>    
   </body> 
