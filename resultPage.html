@@ -25,10 +25,10 @@ and open the template in the editor.
             }
             for (y = 0; y < x-1; y++);
             {
-                var paravar[y] = para1.split("=")[1];
+                var paravar[y] = para[y].split("=")[1];
             }
             document.getElementById("write").innerHTML = parameters;
-            //document.getElementById("write").innerHTML = paravar[1];
+            document.getElementById("write").innerHTML = paravar[1];
         </script>
     </body>
 </html>
