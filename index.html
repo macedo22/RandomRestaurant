@@ -81,7 +81,7 @@
     
     <img id="INeed" src="ineed.jpg" alt="Choose a category: " style="width:170px;height:60px;">
     <form id="FormCategories" name="InventoryList" method="GET" action = "resultPage.html">
-      <input type="text" onkeypress="validate(event)" id="ZipCode" name = "ZipCode" placeholder='#####' align="right" required>
+      <input type="text" onkeypress="validate(event)" id="ZipCode" name = "ZipCode" placeholder='#####' align="right" onSubmit = "return checkForm()" required>
         <select name="SelBranch" class="bnotes" multiple="multiple" id ='select' size=5>
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
@@ -112,7 +112,18 @@
                 if(theEvent.preventDefault) theEvent.preventDefault();
             }
         }
-      
+      function checkForm()
+      {
+        if (document.InventoryList.ZipCode.value.length != 5)
+        {
+          window.alert("Please input a valid zip code.");
+          return false;
+        }
+        else
+        {
+          return true;
+        }
+      }
     </script>    
   </body> 
 </html> 
