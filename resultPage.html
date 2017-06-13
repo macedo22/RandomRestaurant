@@ -27,13 +27,15 @@ and open the template in the editor.
             {
                 paravar.push(para[y].split("=")[1]);
             }
-            var para1 = parameters.split("&")[0];
-            var para2 = parameters.split("&")[1];
-            var para1var = para1.split("=")[1];
-            var para2var = para2.split("=")[1];
-            //document.getElementById("demo").innerHTML = parameters;
+            for (y = 0; y < x; y++)
+            {
+                if (paravar[y] == "Fast+Food")
+                {
+                    paravar[y] = "Fast Food";
+                }
+            }
             document.getElementById("demo").innerHTML = paravar;
-            //document.getElementById("demo").innerHTML = para[1];
+            
         </script>
     </body>
 </html>
