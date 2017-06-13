@@ -1,17 +1,49 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="windows-1252">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <p id = "demo">Hi</p>
+  <head>
+      <title>What the Food!?</title>
+      <meta charset="windows-1252">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body
+        {
+          background: url("wtflogo.jpg");
+          background-repeat: no-repeat;
+          background-size: 550px 320px;
+          background-position: 50% 5%;
+        }
+        #NewSearch
+        {
+            position:absolute;
+            top:40%;
+            left:40%;
+            width:120px;
+            height:40px;
+        }
+		
+        #Regenerate 
+        {
+            position:absolute;
+            top:40%;
+            left:52%;
+            width:130px;
+            height:45px;
+        }
+		
+		#Results
+		{
+			position:absolute;
+            top:50%;
+            left:40%;
+			font-family:Arial;
+			font-size:16px;
+		}
+
+      </style>
+  </head>
+
+  <body>
+        <p id="Results">Display restaurants here</p>
         <script>
             var path = window.location.href;
             var parameters = path.split("?")[1];
@@ -36,7 +68,12 @@ and open the template in the editor.
             }
             document.getElementById("demo").innerHTML = paravar;
         </script>
-                    <a href= "https://macedo22.github.io/WhatTheFood" >New Search</a>
-            <a href= "javascript:history.go(0)" >Regenerate!</a>
+		<a href= "https://macedo22.github.io/WhatTheFood">
+			<img id="NewSearch" src="newsearch.png" alt="New Search!">
+		</a>
+		
+		<a href= "javascript:history.go(0)">
+			<img id="Regenerate" src="regenerate.png" alt="Regenerate!">
+		</a>
     </body>
-</html>
+</html> 
