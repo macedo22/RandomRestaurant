@@ -117,13 +117,15 @@
          var InvForm = document.forms.InventoryList;
          var SelBranchVal = "";
          var x = 0;         
+         var y;
          var results = [];
         // Get the value of the input field with id="ZipCode"
-        results.push("document.getElementById("ZipCode").value");
-        if (results[0].length != 5)
+        y = document.getElementById("ZipCode").value;
+        if (y.length != 5)
         {
             window.alert("Please enter in a valid zip code");
         }
+        results.push("y");
         else
         {
          for (x=0;x<InvForm.SelBranch.length;x++)
