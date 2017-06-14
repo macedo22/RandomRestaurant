@@ -80,7 +80,7 @@
     <br>
     
     <img id="INeed" src="ineed.jpg" alt="Choose a category: " style="width:170px;height:60px;">
-    <form id="FormCategories" name="InventoryList" method="GET" action = "resultPage.html" onSubmit = "return checkForm()">
+    <form id="FormCategories" name="InventoryList" method="post">
       <input type="text" onkeypress="validate(event)" id="ZipCode" name = "ZipCode" placeholder='#####' align="right" required>
         <select name="SelBranch" class="bnotes" multiple="multiple" id ='select' size=5>
             <option value="Breakfast">Breakfast</option>
@@ -92,7 +92,7 @@
             <option value="Chinese">Chinese</option>
             <option value="Desserts">Desserts</option>
         </select>
-        <input id="FeedMe" type="submit" name="ViewReport" value="Feed Me!" class="bnotes">
+        <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
   
         <p id="demo"></p>
@@ -112,18 +112,32 @@
                 if(theEvent.preventDefault) theEvent.preventDefault();
             }
         }
-      function checkForm()
-      {
-        if (document.InventoryList.ZipCode.value.length != 5)
+      function GetInventory()
+       {
+         var InvForm = document.forms.InventoryList;
+         var SelBranchVal = "";
+         var x = 0;         
+         var y;
+        // Get the value of the input field with id="ZipCode"
+        y = document.getElementById("ZipCode").value;
+        if (y.length != 5)
         {
-          window.alert("Please enter a valid zip code.");
-          return false;
+            window.alert("Please enter in a valid zip code");
         }
         else
         {
-          return true;
+         for (x=0;x<InvForm.SelBranch.length;x++)
+            {
+                if (InvForm.SelBranch[x].selected)
+                {
+                //alert(InvForm.SelBranch[x].value);
+                SelBranchVal = SelBranchVal + " " + InvForm.SelBranch[x].value;
+                }
+            }
+        document.getElementById("dem").innerHTML = SelBranchVal;
+        document.getElementById("demo").innerHTML = y;
         }
-      }
+       }
     </script>    
   </body> 
 </html> 
