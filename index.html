@@ -94,8 +94,6 @@
         </select>
         <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
-  
-        <p id="demo"></p>
         <p id="dem"></p>
   
     <script language="JavaScript">
@@ -117,7 +115,6 @@
          var InvForm = document.forms.InventoryList;
          var SelBranchVal = "";
          var x = 0;         
-         var y;
          var results = [];
         // Get the value of the input field with id="ZipCode"
         results.push(document.getElementById("ZipCode").value);
@@ -131,7 +128,6 @@
             {
                 if (InvForm.SelBranch[x].selected)
                 {
-                //alert(InvForm.SelBranch[x].value);
                 results.push(InvForm.SelBranch[x].value);
                 }
             }
