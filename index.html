@@ -120,12 +120,11 @@
          var y;
          var results = [];
         // Get the value of the input field with id="ZipCode"
-        y = document.getElementById("ZipCode").value;
-        if (y.length != 5)
+        results.push(document.getElementById("ZipCode").value);
+        if (results[0].length != 5)
         {
             window.alert("Please enter in a valid zip code");
         }
-        results.push("y");
         else
         {
          for (x=0;x<InvForm.SelBranch.length;x++)
@@ -133,7 +132,7 @@
                 if (InvForm.SelBranch[x].selected)
                 {
                 //alert(InvForm.SelBranch[x].value);
-                results.push("InvForm.SelBranch[x].value");
+                results.push(InvForm.SelBranch[x].value);
                 }
             }
         document.getElementById("dem").innerHTML = results;
