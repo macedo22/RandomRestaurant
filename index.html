@@ -112,31 +112,32 @@
                 if(theEvent.preventDefault) theEvent.preventDefault();
             }
         }
-      var InvForm = document.forms.InventoryList;
- +         var SelBranchVal = "";
- +         var x = 0;         
- +         var y;
- +        // Get the value of the input field with id="ZipCode"
- +        y = document.getElementById("ZipCode").value;
- +        if (y.length != 5)
-          {
- -          window.alert("Please enter a valid zip code.");
- -          return false;
- +            window.alert("Please enter in a valid zip code");
-          }
-          else
-          {
- -          return true;
- +         for (x=0;x<InvForm.SelBranch.length;x++)
- +            {
- +                if (InvForm.SelBranch[x].selected)
- +                {
- +                //alert(InvForm.SelBranch[x].value);
- +                SelBranchVal = SelBranchVal + " " + InvForm.SelBranch[x].value;
- +                }
- +            }
- +        document.getElementById("dem").innerHTML = SelBranchVal;
- +        document.getElementById("demo").innerHTML = y;
+      function GetInventory()
+       {
+         var InvForm = document.forms.InventoryList;
+         var SelBranchVal = "";
+         var x = 0;         
+         var y;
+        // Get the value of the input field with id="ZipCode"
+        y = document.getElementById("ZipCode").value;
+        if (y.length != 5)
+        {
+            window.alert("Please enter in a valid zip code");
+        }
+        else
+        {
+         for (x=0;x<InvForm.SelBranch.length;x++)
+            {
+                if (InvForm.SelBranch[x].selected)
+                {
+                //alert(InvForm.SelBranch[x].value);
+                SelBranchVal = SelBranchVal + " " + InvForm.SelBranch[x].value;
+                }
+            }
+        document.getElementById("dem").innerHTML = SelBranchVal;
+        document.getElementById("demo").innerHTML = y;
+        }
+       }
     </script>    
   </body> 
 </html> 
