@@ -22,7 +22,7 @@ app.listen(3000, function () {
 function takeValue()
 {
     results.push("test value");
-    alert(results);
+    window.alert("In takeValue function");
     return results;
 }
 
