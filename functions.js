@@ -75,27 +75,8 @@ const clientId = 'UCn9wNpGoW4R8I-skfKghw';
 const clientSecret = 'sU7Db2PGwyTiFk338fP1YX7CSlpTyp8NZ7ap3wvOILXLV8yK3KDN5tR3oO6U9pwx';
 
 
+function httpRequest(req);
 
-httpRequest=function(req){
-  var results=[];
-  yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
-    const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
-    
-    client.search(req).then(response => {
-      var temp;
-      for(var i=0;i<numberOfResults;i++){
-          temp=response.json.Body.businesses[i];
-          results[i]=new Restaurant();
-          results[i].addRestaurant(temp);
-          const prettyJson = JSON.stringify(temp);
-          console.log(results[i]);
-      }
-    });
-  }).catch(e => {
-    console.log(e);
-  });
-  return results;
-};
 
 
 var results=[];//will use addRestaurant to populate this
@@ -190,6 +171,30 @@ class Restaurant{
     }//
     
 }
+
+httpRequest(req){
+  var results=[];
+  yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
+    const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
+    
+    client.search(req).then(response => {
+      var temp;
+      for(var i=0;i<numberOfResults;i++){
+          temp=response.json.Body.businesses[i];
+          results[i]=new Restaurant();
+          results[i].addRestaurant(temp);
+          const prettyJson = JSON.stringify(temp);
+          console.log(results[i]);
+      }
+    });
+  }).catch(e => {
+    console.log(e);
+  });
+  return results;
+};
+
+
+
 
 /*I think this is the one we don't need
 htttpRequest=function(req){
