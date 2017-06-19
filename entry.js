@@ -6,24 +6,24 @@ function takeValue(result)
     return result;
 }
 
-//const express = require('express');
-//const app = express();
-//var http = require('http');
-//var dt = require('./functions');
+const express = require('express');
+const app = express();
+var http = require('http');
+var dt = require('./functions');
 
-//http.createServer(function (req, res) {
-//    res.writeHead(200, {'Content-Type': 'text/html'});
-//    res.write("The date and time are currently: " + dt.myDateTime());
-//    res.end('Hello World!');
-//}).listen(8080);
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write("The date and time are currently: " + dt.myDateTime());
+    res.end('Hello World!');
+}).listen(8080);
 
-//app.get('/', function (req, res) {
-//  res.send('Hello World!');
-//});
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
 
-//app.listen(3000, function () {
-//  console.log('Example app listening on port 3000!');
-//});
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
 
 
 
