@@ -163,7 +163,7 @@ class Restaurant{
         //var zip= zipcode;
         //var category= categories;    
         const request={
-            zip: zipcode,
+            location: zipcode,
             categories: criteria
         };
         
@@ -190,6 +190,7 @@ class Restaurant{
     
 }
 
+/*I think this is the one we don't need
 htttpRequest=function(req){
   yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
     const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
@@ -209,7 +210,7 @@ htttpRequest=function(req){
   });
   return results;
 };
-
+*/
 
 
 
