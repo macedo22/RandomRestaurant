@@ -173,6 +173,7 @@ class Restaurant{
         //pick a random number from 0 to 19
         var x = Math.floor(Math.random() * 19);
         //access matches[index] components
+        var choice = matches[x];
         //put components into resultPage
         //make matches[index].isOption=false
         
