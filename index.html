@@ -143,10 +143,8 @@
                 results.push(InvForm.SelBranch[x].value);
                 }
             }
-          result = results;
         document.getElementById("getResults").innerHTML = results;
-          document.getElementById("demo").innerHTML = "result is " + result;
-          takeValue();
+          result = takeValue(results);
           //document.getElementById("demo").innerHTML = results;
         }
        }
