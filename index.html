@@ -2,7 +2,7 @@
 <html>
   <head>
     <script>
-      var results = [];
+      var result = [];
     </script>
     <script type='text/javascript' src='js/entry.js'></script> 
       <title>What the Food!?</title>
@@ -143,8 +143,9 @@
                 results.push(InvForm.SelBranch[x].value);
                 }
             }
+          result = results;
         document.getElementById("getResults").innerHTML = results;
-          //document.getElementById("demo").innerHTML = "results is " + results;
+          document.getElementById("demo").innerHTML = "result is " + result;
           takeValue();
           //document.getElementById("demo").innerHTML = results;
         }
