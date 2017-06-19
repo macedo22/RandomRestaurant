@@ -68,6 +68,16 @@
             border:solid 5px #53b4fd;
             cursor:pointer;
         }
+        
+        #getResults
+        {
+            position:absolute;
+            top:50%;
+            left:40%;
+            font-family:Arial;
+            font-size:20px;
+        }
+
       </style>
   </head>
 
@@ -91,7 +101,7 @@
         </select>
         <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
-        <p id="dem"></p>
+    <p id="getResults"></p>
   
     <script language="JavaScript">
         <!--This function prevents the user from inputting letters as the zipcode-->
@@ -128,7 +138,7 @@
                 results.push(InvForm.SelBranch[x].value);
                 }
             }
-        document.getElementById("dem").innerHTML = results;
+        document.getElementById("getResults").innerHTML = results;
         }
        }
     </script>    
