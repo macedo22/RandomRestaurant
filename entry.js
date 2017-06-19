@@ -1,9 +1,9 @@
 //include function.js?
 
-function takeValue(x)
+function takeValue(result)
 {
-    x.push("test takeValue");
-    return x;
+    result.push("test takeValue");
+    return result;
 }
 
 //const express = require('express');
