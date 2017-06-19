@@ -163,7 +163,7 @@ class Restaurant{
         //var zip= zipcode;
         //var category= categories;    
         const request={
-            zip: zipcode,
+            location: zipcode,
             categories: criteria
         };
         
@@ -171,7 +171,9 @@ class Restaurant{
                                          //now, matches is an array of restaurant objects
                                          
         //pick a random number from 0 to 19
+        var x = Math.floor(Math.random() * 19);
         //access matches[index] components
+        var choice = matches[x];
         //put components into resultPage
         //make matches[index].isOption=false
         
@@ -189,6 +191,7 @@ class Restaurant{
     
 }
 
+/*I think this is the one we don't need
 htttpRequest=function(req){
   yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
     const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
@@ -208,7 +211,7 @@ htttpRequest=function(req){
   });
   return results;
 };
-
+*/
 
 
 

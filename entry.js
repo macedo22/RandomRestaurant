@@ -3,13 +3,26 @@
 function takeValue(result)
 {
     result.push("test takeValue");
+    pushValue(result);
     return result;
 }
 
+<<<<<<< HEAD
 const express = require('express');
 const app = express();
 var http = require('http');
 var dt = require('./functions');
+=======
+function pushValue(result)
+{
+    result.push("test pushValue");
+    return result;
+}
+//const express = require('express');
+//const app = express();
+//var http = require('http');
+//var dt = require('./functions');
+>>>>>>> 6bea3564532579321b61005326e7e19b447aee70
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
