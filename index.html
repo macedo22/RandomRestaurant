@@ -127,7 +127,6 @@
          var InvForm = document.forms.InventoryList;
          var SelBranchVal = "";
          var x = 0;         
-         var results = [];
         // Get the value of the input field with id="ZipCode"
         results.push(document.getElementById("ZipCode").value);
         if (results[0].length != 5)
@@ -144,6 +143,7 @@
                 }
             }
         document.getElementById("getResults").innerHTML = results;
+          document.getElementById("demo").innerHTML = "results is " + results;
           takeValue();
           //document.getElementById("demo").innerHTML = results;
         }
