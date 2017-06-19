@@ -2,7 +2,8 @@
 
 'use strict';
 
-var Functions = require('./functions.js');
+//var Functions = require('./functions.js');
+import {Restaurant} from 'functions.js';
 
 function takeValue(result)
 {
