@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      var results = [];
+    </script>
+    <script type='text/javascript' src='js/entry.js'></script> 
       <title>What the Food!?</title>
       <meta charset="windows-1252">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -102,6 +106,7 @@
         <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
     <p id="getResults"></p>
+    <p id = "demo"></p>
   
     <script language="JavaScript">
         <!--This function prevents the user from inputting letters as the zipcode-->
@@ -138,7 +143,9 @@
                 results.push(InvForm.SelBranch[x].value);
                 }
             }
-        document.getElementById("getResults").innerHTML = results;
+        //document.getElementById("getResults").innerHTML = results;
+          takeValue();
+          //document.getElementById("demo").innerHTML = results;
         }
        }
     </script>    
