@@ -1,5 +1,12 @@
 //include function.js?
 
+function takeValue()
+{
+    //results.push("test value");
+    window.alert("In takeValue function");
+    //return results;
+}
+
 const express = require('express');
 const app = express();
 var http = require('http');
@@ -18,13 +25,6 @@ app.get('/', function (req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
-
-function takeValue()
-{
-    //results.push("test value");
-    window.alert("In takeValue function");
-    //return results;
-}
 
 
 
