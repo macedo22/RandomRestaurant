@@ -22,6 +22,7 @@ app.listen(3000, function () {
 function takeValue()
 {
     results.push("test value");
+    alert(results);
     return results;
 }
 
