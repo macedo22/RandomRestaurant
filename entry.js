@@ -3,7 +3,7 @@
 'use strict';
 
 //var Functions = require('./functions.js');
-import {Restaurant} from 'functions.js';
+import {Restaurant} from './functions';
 
 function takeValue(result)
 {
