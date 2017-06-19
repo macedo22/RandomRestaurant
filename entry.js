@@ -3,9 +3,15 @@
 function takeValue(result)
 {
     result.push("test takeValue");
+    pushValue(result);
     return result;
 }
 
+function pushValue(result)
+{
+    result.push("test pushValue");
+    return result;
+}
 //const express = require('express');
 //const app = express();
 //var http = require('http');
