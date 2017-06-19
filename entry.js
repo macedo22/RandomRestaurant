@@ -7,6 +7,7 @@ function takeValue(result)
     return result;
 }
 
+/*
 <<<<<<< HEAD
 const express = require('express');
 const app = express();
@@ -22,7 +23,7 @@ function pushValue(result)
 //const app = express();
 //var http = require('http');
 //var dt = require('./functions');
->>>>>>> 6bea3564532579321b61005326e7e19b447aee70
+//>>>>>>> 6bea3564532579321b61005326e7e19b447aee70
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
@@ -44,6 +45,7 @@ app.listen(3000, function () {
 
 //document.getElementById("test").innerHTML="Goodbye world!";
 
+*/
 
 /*************************************
  * 
