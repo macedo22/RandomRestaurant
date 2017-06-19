@@ -82,7 +82,7 @@ const clientSecret = 'sU7Db2PGwyTiFk338fP1YX7CSlpTyp8NZ7ap3wvOILXLV8yK3KDN5tR3oO
 var results=[];//will use addRestaurant to populate this
 
 
-class Restaurant{  
+module.exports=class Restaurant{  
     constructor()/*(zipcode, categories)*/{
         //this.zipcode=zipcode;
         //this.catgories=catagories;
@@ -120,6 +120,11 @@ class Restaurant{
     }
     static review(){
         return review;
+    }
+    
+    testServer(result){
+        result.push("test Server");
+        return result;
     }
     
     addRestaurant(restaurant){

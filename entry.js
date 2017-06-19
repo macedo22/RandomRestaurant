@@ -1,10 +1,16 @@
 //include function.js?
 
+'use strict';
+
+var Functions = require('./functions.js');
+
 function takeValue(result)
 {
     result.push("test takeValue");
-    pushValue(result);
-    return result;
+    var server = testServer(result);
+    //pushValue(result);
+    //return result;
+    return server;
 }
 
 /*
