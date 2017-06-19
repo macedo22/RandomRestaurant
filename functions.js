@@ -75,7 +75,7 @@ const clientId = 'UCn9wNpGoW4R8I-skfKghw';
 const clientSecret = 'sU7Db2PGwyTiFk338fP1YX7CSlpTyp8NZ7ap3wvOILXLV8yK3KDN5tR3oO6U9pwx';
 
 
-function httpRequest(req);
+//httpRequest(req);
 
 
 
@@ -172,7 +172,7 @@ class Restaurant{
     
 }
 
-httpRequest(req){
+function httpRequest(req){
   var results=[];
   yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
     const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
