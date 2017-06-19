@@ -1,10 +1,9 @@
 //include function.js?
 
-function takeValue()
+function takeValue(x)
 {
-    //results.push("test value");
-    window.alert("In takeValue function");
-    //return results;
+    x.push("test takeValue");
+    return x;
 }
 
 //const express = require('express');
