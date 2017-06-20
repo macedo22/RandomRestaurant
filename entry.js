@@ -1,6 +1,6 @@
 //include function.js?
 
-'use strict';
+//'use strict';
 
 function takeValue(result)
 {
