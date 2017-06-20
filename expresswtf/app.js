@@ -12,8 +12,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-//app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
