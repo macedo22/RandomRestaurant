@@ -5,7 +5,7 @@
 function takeValue(result)
 {
     result.push("test takeValue");
-    result = testServer(result);
+    testServer(result);
     //pushValue(result);
     //return result;
     return result;
