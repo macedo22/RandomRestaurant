@@ -5,10 +5,10 @@
 function takeValue(result)
 {
     result.push("test takeValue");
-    var server = testServer(result);
+    result = testServer(result);
     //pushValue(result);
     //return result;
-    return server;
+    return result;
 }
 
 /*
