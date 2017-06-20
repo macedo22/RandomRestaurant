@@ -49,7 +49,7 @@ yelp.accessToken(clientId, clientSecret).then(response => {   // pass client cre
 
 /******SAMPLE CODE ABOVE. CLASS AND FUNCTION PROTOTYPES BELOW*************/
 
-
+/*
 'use strict';
 
 const numberOfResults=20;//subject to change
@@ -65,7 +65,7 @@ http.createServer(function (req, res) {
     res.end('Hello World!');
 }).listen(8080);
 */
-
+/*
 app.get('/', function (req, res) {
   res.send('GET Request to the homepage');
 });
@@ -93,6 +93,7 @@ class Restaurant{
     constructor()/*(zipcode, categories)*/{
         //this.zipcode=zipcode;
         //this.catgories=catagories;
+        /*
         var zipcode;
         var categories;
         var name;
@@ -179,7 +180,7 @@ class Restaurant{
     }//
     
 }
-
+/*
 function httpRequest(req){
   var results=[];
   yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
@@ -241,15 +242,16 @@ htttpRequest=function(req){
 
 
 //we should check to see if we can submit a get request specifying at least 3 stars
+/*
 function isDecent(/*pass restarant id or whole json object*/){
     //parse out # of stars
     //return whether or not it is at least 3 stars (bool)
-};//
+//};//
 
 
 
 
-
+/*
 function isArray(myArray) {
     return myArray.constructor.toString().indexOf("Array") > -1;  // validates that object passed is an array
 };
