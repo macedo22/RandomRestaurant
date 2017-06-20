@@ -2,9 +2,6 @@
 
 'use strict';
 
-//var Functions = require('./functions');
-import {Restaurant} from './functions';
-
 function takeValue(result)
 {
     result.push("test takeValue");
