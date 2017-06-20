@@ -3,12 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-    
-    function testServer(result)
-    {
-        result.push("test Server");
-        return result;
-    }
 
 
 /*myDateTime = function () {
@@ -27,10 +21,8 @@
   term:'Four Barrel Coffee',
   location: 'san francisco, ca'
 };
-
 yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
   const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
-
   client.search(searchRequest).then(response => {
     const firstResult = response.jsonBody.businesses[0];
     const prettyJson = JSON.stringify(firstResult, null, 4);
@@ -49,7 +41,7 @@ yelp.accessToken(clientId, clientSecret).then(response => {   // pass client cre
 
 /******SAMPLE CODE ABOVE. CLASS AND FUNCTION PROTOTYPES BELOW*************/
 
-/*
+
 'use strict';
 
 const numberOfResults=20;//subject to change
@@ -65,7 +57,7 @@ http.createServer(function (req, res) {
     res.end('Hello World!');
 }).listen(8080);
 */
-/*
+
 app.get('/', function (req, res) {
   res.send('GET Request to the homepage');
 });
@@ -93,7 +85,6 @@ class Restaurant{
     constructor()/*(zipcode, categories)*/{
         //this.zipcode=zipcode;
         //this.catgories=catagories;
-        /*
         var zipcode;
         var categories;
         var name;
@@ -129,7 +120,11 @@ class Restaurant{
     static review(){
         return review;
     }
-}
+    
+    testServer(result){
+        result.push("test Server");
+        return result;
+    }
     
     addRestaurant(restaurant){
         this.zipcode=restaurant.zipcode.toString();
@@ -180,7 +175,7 @@ class Restaurant{
     }//
     
 }
-/*
+
 function httpRequest(req){
   var results=[];
   yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
@@ -242,17 +237,15 @@ htttpRequest=function(req){
 
 
 //we should check to see if we can submit a get request specifying at least 3 stars
-/*
 function isDecent(/*pass restarant id or whole json object*/){
     //parse out # of stars
     //return whether or not it is at least 3 stars (bool)
-//};//
+};//
 
 
 
 
-/*
+
 function isArray(myArray) {
     return myArray.constructor.toString().indexOf("Array") > -1;  // validates that object passed is an array
 };
-
