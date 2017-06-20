@@ -3,6 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+    
+    function testServer(result)
+    {
+        result.push("test Server");
+        return result;
+    }
 
 
 /*myDateTime = function () {
@@ -123,12 +129,6 @@ class Restaurant{
         return review;
     }
 }
-    
-    function testServer(result)
-    {
-        result.push("test Server");
-        return result;
-    }
     
     addRestaurant(restaurant){
         this.zipcode=restaurant.zipcode.toString();
