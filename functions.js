@@ -123,7 +123,7 @@ class Restaurant{
         return review;
     }
     
-    testServer(result){
+    function testServer(result){
         result.push("test Server");
         return result;
     }
