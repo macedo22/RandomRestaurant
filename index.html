@@ -5,7 +5,7 @@
       var result = [];
     </script>
     <script type='text/javascript' src='entry.js'></script> 
-    <script type='text/javascript' src='functions.js'></script> 
+    <script type='text/javascript' src='function.js'></script> 
       <title>What the Food!?</title>
       <meta charset="windows-1252">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -144,7 +144,7 @@
                 results.push(InvForm.SelBranch[x].value);
                 }
             }
-        document.getElementById("getResults").innerHTML = results;
+        document.getElementById("getResults").innerHTML = results + "Hi";
           result = results;
           document.getElementById("demo").innerHTML = takeValue(result);
         }
