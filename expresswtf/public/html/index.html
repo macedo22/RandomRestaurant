@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var result = [];
+    </script>
+    <script type='text/javascript' src='entry.js'></script> 
+      <title>What the Food!?</title>
+      <meta charset="windows-1252">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body
+        {
+          background: url("wtflogo.jpg");
+          background-repeat: no-repeat;
+          background-size: 550px 320px;
+          background-position: 50% 5%;
+        }
+        #Location
+        {
+            position:absolute;
+            top:45%;
+            left:20%;
+            width:100px;
+            height:15px;
+        }
+        #ZipCode
+        {
+            position:absolute;
+            top:-180%;
+            left:0%;
+            width:135px;
+            height:15px;
+            font:Arial;
+            font-size:15px;
+            padding:10px;
+            border: solid 5px #53b4fd;
+            transition:box-shadow 0.3s, border 0.3s;
+        }
+        #INeed 
+        {
+            position:absolute;
+            top:66%;
+            left:20%;
+            width:100px;
+            height:15px;
+        }
+        #FormCategories 
+        {
+            position:absolute;
+            top:74%;
+            left:20%;
+            font:Arial;
+            font-size:12px;
+            text-align:center;
+            padding:5px;
+            border: solid 5px #53b4fd;
+            width:146px;
+            transition:box-shadow 0.3s, border 0.3s;
+        }
+        
+        #FeedMe
+        {
+            position:absolute;
+            top:120%;
+            left:20%;
+            width:90px;
+            height:40px;
+            font:Arial;
+            font-size:13px;
+            padding:5px;
+            border:solid 5px #53b4fd;
+            cursor:pointer;
+        }
+        
+        #getResults
+        {
+            position:absolute;
+            top:50%;
+            left:40%;
+            font-family:Arial;
+            font-size:20px;
+        }
+
+      </style>
+  </head>
+
+  
+  <body>
+    <img id="Location" src="location.jpg" alt="Enter Your Location: " style="width:180px;height:70px;"> 
+    <br>
+    
+    <img id="INeed" src="ineed.jpg" alt="Choose a category: " style="width:170px;height:60px;">
+    <form id="FormCategories" name="InventoryList" method="post">
+      <input type="text" onkeypress="validate(event)" id="ZipCode" name = "ZipCode" placeholder='#####' align="right" required>
+        <select name="SelBranch" class="bnotes" multiple="multiple" id ='select' size=5>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Fast Food">Fast Food</option>
+            <option value="Vietnamese">Vietnamese</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Desserts">Desserts</option>
+        </select>
+        <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
+    </form>
+    <p id="getResults"></p>
+    <p id = "demo"></p>
+  
+    <script language="JavaScript">
+        <!--This function prevents the user from inputting letters as the zipcode-->
+       function validate(evt) 
+       {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode( key );
+        var regex = /[0-9]|\./;
+            if( !regex.test(key) ) 
+            {
+                theEvent.returnValue = false;
+                if(theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+      function GetInventory()
+       {
+         var InvForm = document.forms.InventoryList;
+         var SelBranchVal = "";
+         var x = 0;         
+         var results = [];
+        // Get the value of the input field with id="ZipCode"
+        results.push(document.getElementById("ZipCode").value);
+        if (results[0].length != 5)
+        {
+            window.alert("Please enter in a valid zip code");
+        }
+        else
+        {
+         for (x=0;x<InvForm.SelBranch.length;x++)
+            {
+                if (InvForm.SelBranch[x].selected)
+                {
+                results.push(InvForm.SelBranch[x].value);
+                }
+            }
+        document.getElementById("getResults").innerHTML = results;
+          result = results;
+          document.getElementById("demo").innerHTML = takeValue(result);
+        }
+       }
+    </script>    
+  </body> 
+</html> 
