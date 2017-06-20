@@ -82,7 +82,7 @@ const clientSecret = 'sU7Db2PGwyTiFk338fP1YX7CSlpTyp8NZ7ap3wvOILXLV8yK3KDN5tR3oO
 var results=[];//will use addRestaurant to populate this
 
 
-module.exports=class Restaurant{  
+class Restaurant{  
     constructor()/*(zipcode, categories)*/{
         //this.zipcode=zipcode;
         //this.catgories=catagories;
