@@ -122,8 +122,10 @@ class Restaurant{
     static review(){
         return review;
     }
+}
     
-    function testServer(result){
+    function testServer(result)
+    {
         result.push("test Server");
         return result;
     }
