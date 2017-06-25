@@ -191,6 +191,7 @@ exports.httpRequest=function(req,res,next){
         var zipInput=inputScript.ZipCode;
         var categoriesInput=inputScript.SelBranch;
         
+        console.log("made it here");
         
         //var form =new formidable.IncomingForm();
     
@@ -213,7 +214,13 @@ exports.httpRequest=function(req,res,next){
         categories: categoriesInput
     };
     
+    console.log("now i made it here!");
+    
     res.send(searchRequest);
+    
+    
+    console.log("made it allll the way");
+    
     
     /*
      yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
