@@ -215,10 +215,10 @@ exports.httpRequest=function(req,res,next){
             //categoriesInput=fields.SelBranch;
         //});
     
-    //const searchRequest = {
-        //location: zipInput,
-        //categories: categoriesInput
-    //};
+    const searchRequest = {
+        location: zipInput,
+        categories: categoriesInput
+    };
     
     //console.log("now i made it here!");
     
@@ -228,7 +228,7 @@ exports.httpRequest=function(req,res,next){
     //console.log("made it allll the way");
     
     
-    /*
+    
      yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
         const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
          client.search(searchRequest).then(response => {
@@ -238,8 +238,8 @@ exports.httpRequest=function(req,res,next){
             res.send(prettyJson);
         });
    }).catch(e => {
-  console.log(e);*/
-//});
+  console.log(e);
+    });
     
     
     
