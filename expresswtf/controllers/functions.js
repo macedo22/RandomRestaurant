@@ -188,8 +188,10 @@ exports.httpRequest=function(req,res,next){
         
         var inputScript = JSON.parse(req);
         
-        var zipInput=inputScript.ZipCode;
-        var categoriesInput=inputScript.SelBranch;
+        console.log(inputscript);
+        
+        //var zipInput=inputScript.ZipCode;
+        //var categoriesInput=inputScript.SelBranch;
         
         console.log("made it here");
         
