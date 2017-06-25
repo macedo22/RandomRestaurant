@@ -179,7 +179,7 @@ class Restaurant{
 
 exports.httpRequest=function(req,res,next){
     
-    res.send({'<p>some html</p>');
+    res.send('<p>some html</p>');
     
   /*
     //check that name field isn't empty
