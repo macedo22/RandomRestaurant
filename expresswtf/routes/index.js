@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 //router.post('/', functions_controller.httpRequest);//add back after post works
 
-router.post('/', function(req,req){
+router.post('/', function(req,res){
     res.send('Received POST request WEEEEE');
     console.log("received post request yayyyy!");
     
