@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 //router.post('/', functions_controller.httpRequest);//add back after post works
 
-router.post('/' function(req,req,next){
+router.post('/', function(req,req,next){
     res.send('Received post request WEEEEE');
 });
 
