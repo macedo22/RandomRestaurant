@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var formidable = require("formidable");
+var util=require("util");
 
 var functions_controller=require('../controllers/functions');
 
@@ -12,7 +14,20 @@ router.get('/', function(req, res, next) {
 //router.post('/', functions_controller.httpRequest);//add back after post works
 
 router.post('/', function(req,req,next){
-    res.send('Received POST request WEEEEE');
+    //res.send('Received POST request WEEEEE');
+    console.log("received post request yayyyy!");
+    var form =new formidable.IncomingForm
+    
+    form.parse(req,function(err,fields,files){
+        res.writeHead(200,{
+            'content-type': 'text/plain'
+        });
+        res.write('received the data:\n\n');
+        res.end(util.inspect({
+            fields: fields,
+            files: files
+        }))
+    })
 });
 
 
