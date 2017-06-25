@@ -186,11 +186,15 @@ exports.httpRequest=function(req,res,next){
        // location: 'san francisco, ca'
     // };
         
-        var zipInput='';
-        var categoriesInput='';
-        var form =new formidable.IncomingForm();
+        var inputScript = JSON.parse(req);
+        
+        var zipInput=inputScript.ZipCode;
+        var categoriesInput=inoutScript.SelBranch;
+        
+        
+        //var form =new formidable.IncomingForm();
     
-        form.parse(req,function(err,fields,files){
+        //form.parse(req,function(err,fields,files){
           //  res.writeHead(200,{
                 //'content-type': 'text/plain'
            // });
@@ -200,9 +204,9 @@ exports.httpRequest=function(req,res,next){
                 //files: files
             //}))
             
-            zipInput=fields.ZipCode;
-            categoriesInput=fields.SelBranch;
-        });
+            //zipInput=fields.ZipCode;
+            //categoriesInput=fields.SelBranch;
+        //});
     
     const searchRequest = {
         location: zipInput,
