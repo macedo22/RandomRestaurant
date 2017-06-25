@@ -11,13 +11,13 @@ router.get('/', function(req, res, next) {
   //res.send('Received GET request WEEEEE');
 });
 
-//router.post('/', functions_controller.httpRequest);//add back after post works
+router.post('/', functions_controller.httpRequest);//add back after post works
 
-router.post('/', function(req,res){
+//router.post('/', function(req,res){
+    //console.log("received post request yayyyy!");
     //res.send('Received POST request WEEEEE');
-    console.log("received post request yayyyy!");
     
-    
+    /*
     var form =new formidable.IncomingForm
     
     form.parse(req,function(err,fields,files){
@@ -29,7 +29,7 @@ router.post('/', function(req,res){
             fields: fields,
             files: files
         }))
-    })
+    })*/
 });
 
 
