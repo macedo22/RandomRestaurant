@@ -93,14 +93,21 @@ html.
     <form id="FormCategories" name="InventoryList" method="post" action="" enctype="multipart/form-data">
       <input type="text" onkeypress="validate(event)" id="ZipCode" name = "ZipCode" placeholder='#####' align="right" required>
         <select name="SelBranch" class="bnotes" multiple="multiple" id ='select' size=5>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
+            <option value="All">All</option>
+            <option value="breakfast_brunch">Breakfast</option>
+            <option value="coffee">Coffee & Tea</option>
+            <option value="tradamerican">American</option>
+            <option value="burgers">Burgers</option>
+            <option value="italian">Italian</option>
             <option value="Pizza">Pizza</option>
             <option value="Fast Food">Fast Food</option>
-            <option value="Vietnamese">Vietnamese</option>
-            <option value="Chinese">Chinese</option>
-            <option value="Desserts">Desserts</option>
+            <option value="japanese">Japanese</option>
+            <option value="chinese">Chinese</option>
+            <option value="mexican">Mexican</option>
+            <option value="mediterranean">Mediterranean</option>
+            <option value="desserts">Dessert</option>
+            <option value="vegan">Vegan</option>
+
         </select>
         <input id="FeedMe" type="submit" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
