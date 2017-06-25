@@ -186,10 +186,10 @@ exports.httpRequest=function(req,res,next){
        // location: 'san francisco, ca'
     // };
         
-        //var inputScript = JSON.parse(req);
+        var inputScript = JSON.parse(req);
         
-        //var zipInput=inputScript.ZipCode;
-       // var categoriesInput=inputScript.SelBranch;
+        var zipInput=inputScript.ZipCode;
+        var categoriesInput=inputScript.SelBranch;
         
         console.log("made it here");
         
