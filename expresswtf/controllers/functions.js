@@ -186,10 +186,10 @@ exports.httpRequest=function(req,res,next){
        // location: 'san francisco, ca'
     // };
         
-        var inputScript = JSON.parse(req);
+        //var inputScript = JSON.parse(req);
         
-        var zipInput=inputScript.ZipCode;
-        var categoriesInput=inputScript.SelBranch;
+        //var zipInput=inputScript.ZipCode;
+       // var categoriesInput=inputScript.SelBranch;
         
         console.log("made it here");
         
@@ -209,17 +209,17 @@ exports.httpRequest=function(req,res,next){
             //categoriesInput=fields.SelBranch;
         //});
     
-    const searchRequest = {
-        location: zipInput,
-        categories: categoriesInput
-    };
+    //const searchRequest = {
+        //location: zipInput,
+        //categories: categoriesInput
+    //};
     
-    console.log("now i made it here!");
+    //console.log("now i made it here!");
     
-    res.send(searchRequest);
+    //res.send(searchRequest);
     
     
-    console.log("made it allll the way");
+    //console.log("made it allll the way");
     
     
     /*
