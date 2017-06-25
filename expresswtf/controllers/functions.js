@@ -197,7 +197,7 @@ exports.httpRequest=function(req,res,next){
         var zipInput=req.body.ZipCode;
         var categoriesInput=req.body.SelBranch;
         
-        console.log("made it here");
+        console.log(zipInput + " " + categoriesInput);
         
         //var form =new formidable.IncomingForm();
     
