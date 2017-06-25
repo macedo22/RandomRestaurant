@@ -181,10 +181,34 @@ class Restaurant{
 
 
 exports.httpRequest=function(req,res,next){
-     const searchRequest = {
-        term:'Four Barrel Coffee',
-        location: 'san francisco, ca'
-     };
+    // const searchRequest = {
+       // term:'Four Barrel Coffee',
+       // location: 'san francisco, ca'
+    // };
+        
+        var zipInput='';
+        var categoriesInput='';
+        var form =new formidable.IncomingForm
+    
+        form.parse(req,function(err,fields,files){
+          //  res.writeHead(200,{
+                //'content-type': 'text/plain'
+           // });
+           // res.write('received the data:\n\n');
+           // res.end(util.inspect({
+                //fields: fields,
+                //files: files
+            //}))
+            
+            zipInput=fields.ZipCode;
+            categoriesInput=fields.SelBranch;
+        });
+    
+    const searchRequest = {
+        location: zipInput,
+        categories: categoriesInput
+    };
+    
      yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
         const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
          client.search(searchRequest).then(response => {
