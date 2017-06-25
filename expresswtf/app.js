@@ -7,8 +7,9 @@ var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
-var users = require('./routes/entry');
+var functions = require('./routes/functions');
+//var users = require('./routes/users');
+//var entry = require('./routes/entry');
 
 var app = express();
 
