@@ -14,10 +14,10 @@ router.get('/', function(req, res, next) {
 //router.post('/', functions_controller.httpRequest);//add back after post works
 
 router.post('/', function(req,res){
-    res.send('Received POST request WEEEEE');
+    //res.send('Received POST request WEEEEE');
     console.log("received post request yayyyy!");
     
-    /*
+    
     var form =new formidable.IncomingForm
     
     form.parse(req,function(err,fields,files){
@@ -29,7 +29,7 @@ router.post('/', function(req,res){
             fields: fields,
             files: files
         }))
-    })*/
+    })
 });
 
 
