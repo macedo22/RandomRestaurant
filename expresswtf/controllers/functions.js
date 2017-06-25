@@ -217,7 +217,8 @@ exports.httpRequest=function(req,res,next){
     
     const searchRequest = {
         location: zipInput,
-        categories: categoriesInput
+        categories: categoriesInput,
+        limit: 50
     };
     
     //console.log("now i made it here!");
@@ -240,6 +241,9 @@ exports.httpRequest=function(req,res,next){
    }).catch(e => {
   console.log(e);
     });
+    
+    
+    /*************AFTER THIS: we should render the data of entry JS with the search result info*********************/
     
     
     
