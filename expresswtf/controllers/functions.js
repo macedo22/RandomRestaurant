@@ -179,7 +179,9 @@ class Restaurant{
 
 exports.httpRequest=function(req,res,next){
     
-  
+    res.send({'<p>some html</p>');
+    
+  /*
     //check that name field isn't empty
     req.checkBody('ZipCode','Zip Code required').notEmpty();
  
@@ -220,7 +222,11 @@ exports.httpRequest=function(req,res,next){
         });
         
         return results;
-    }
+    
+   
+   
+   
+    }*/
     
 };
 

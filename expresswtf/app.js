@@ -25,7 +25,7 @@ app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', index);
+app.use('/', index);
 app.use('/', functions);
 //app.use('/users', users);
 
