@@ -181,6 +181,26 @@ class Restaurant{
 
 
 exports.httpRequest=function(req,res,next){
+     const searchRequest = {
+        term:'Four Barrel Coffee',
+        location: 'san francisco, ca'
+     };
+     yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
+        const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
+         client.search(searchRequest).then(response => {
+            const firstResult = response.jsonBody.businesses[0];
+            const prettyJson = JSON.stringify(firstResult, null, 4);
+            console.log(prettyJson);
+            res.send(prettyJson);
+        });
+   }).catch(e => {
+  console.log(e);
+});
+    
+    
+    
+    
+    
     
     //res.send('<p>some html</p>');
     
@@ -206,6 +226,8 @@ exports.httpRequest=function(req,res,next){
     //else{
         //Data from form is valid
         //submit request to yelp here?**************
+        
+        /*
         var results=[];
         yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
             const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
@@ -228,7 +250,7 @@ exports.httpRequest=function(req,res,next){
         
         return results;
     
-   
+   */
    
    
     //}
