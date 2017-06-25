@@ -57,7 +57,7 @@ http.createServer(function (req, res) {
     res.end('Hello World!');
 }).listen(8080);
 */
-
+/*
 app.get('/', function (req, res) {
   res.send('GET Request to the homepage');
 });
@@ -66,7 +66,7 @@ app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
 
-
+*/
 
 // Place holders for Yelp Fusion's OAuth 2.0 credentials. Grab them
 // from https://www.yelp.com/developers/v3/manage_app
@@ -176,26 +176,53 @@ class Restaurant{
     
 }
 
-function httpRequest(req){
-  var results=[];
-  yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
-    const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
+
+exports.httpRequest=function(req,res,next){
     
-    client.search(req).then(response => {
-      var temp;
-      for(var i=0;i<numberOfResults;i++){
-          temp=response.json.Body.businesses[i];
-          results[i]=new Restaurant();
-          results[i].addRestaurant(temp);
-          const prettyJson = JSON.stringify(temp);
-          console.log(results[i]);
-      }
-    });
-  }).catch(e => {
-    console.log(e);
-  });
-  return results;
-}
+  
+    //check that name field isn't empty
+    req.checkBody('ZipCode','Zip Code required').notEmpty();
+ 
+    //Trim and escape the name field
+    req.sanitize('ZipCode').escape();
+    req.sanitize('ZipCode').trim();
+
+    //Run validators
+    var errors = req.validationErrors();
+
+    //store sanitized zipcode into new variable
+    var inputZipCode=req.body.ZipCode;
+    
+    if(errors){
+        //if there are errors, render again--->need to implement this
+        res.render('/', {title: 'error with zipcode input'});
+        return;
+    }
+    else{
+        //Data from form is valid
+        //submit request to yelp here?**************
+        var results=[];
+        yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
+            const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
+
+            client.search(req).then(response => {
+                var temp;
+                for(var i=0;i<numberOfResults;i++){
+                    temp=response.json.Body.businesses[i];
+                    results[i]=new Restaurant();
+                    results[i].addRestaurant(temp);
+                    const prettyJson = JSON.stringify(temp);
+                    console.log(results[i]);
+                }
+            });
+        }).catch(e => {
+            console.log(e);
+        });
+        
+        return results;
+    }
+    
+};
 
 function testServer(result)
 {

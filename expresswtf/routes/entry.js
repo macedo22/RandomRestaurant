@@ -8,13 +8,13 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   //res.render('index', { title: 'Express' });
-  function takeValue(result){
+  /*function takeValue(result){
     result.push("test takeValue");
     testServer(result);
     //pushValue(result);
     //return result;
     return result;
-    }
+    }*/
 
     /*
     <<<<<<< HEAD
@@ -97,3 +97,125 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+
+/********************************RESTAURANT CLASS****************************************************************************************************/
+
+
+
+var results=[];//will use addRestaurant to populate this
+
+class Restaurant{  
+    constructor()/*(zipcode, categories)*/{
+        //this.zipcode=zipcode;
+        //this.catgories=catagories;
+        var zipcode;
+        var categories;
+        var name;
+        var phoneNumber;
+        var url;
+        var address;
+        var review;//or photo?
+        var price;
+        var image_url;
+        var id;
+        var rating;
+        var isOption=true;
+    }
+    
+    static getZipCode(){
+        return zipcode;
+    }
+    static getCategories(){
+        return categories;
+    }
+    static getName(){
+        return name;
+    }
+    static getPhoneNumber(){
+        return phoneNumber;
+    }
+    static getURL(){
+        return url;
+    }
+    static getAddress(){
+        return address;
+    }
+    static review(){
+        return review;
+    }
+    
+    testServer(result){
+        result.push("test Server");
+        return result;
+    }
+    
+    addRestaurant(restaurant){
+        this.zipcode=restaurant.zipcode.toString();
+        this.categories=restaurant.categories.toString();
+        this.name=restaurant.name.toString();
+        this.phoneNumber=restaurant.phoneNumber.toString();
+        this.url=restaurant.url.toString();
+        this.address=restaurant.address.toString();
+        this.review=restaurant.review.toString();
+        this.price=restaurant.price.toString();
+        this.image_url=restaurant.image_url.toString();
+        this.id=restaurant.id.toString();
+        this.rating=restaurant.rating.toString();        
+        //return this;//return restaurant with data filled in
+    }
+    
+    getRestaurants(zipcode,criteria){
+            //do get request based on search criteria
+    //populate an array with first 10 restauarants with for loop
+    //return the array of restaurant matches
+        //var zip= zipcode;
+        //var category= categories;    
+        const request={
+            location: zipcode,
+            categories: criteria
+        };
+        
+        var matches=httpRequest(request);//will store results returned at end of http function
+                                         //now, matches is an array of restaurant objects
+                                         
+        //pick a random number from 0 to 19
+        var randomIndex = Math.floor(Math.random() * (results.length));
+        //access matches[index] components
+        var choice = matches[randomIndex];
+        //put components into resultPage
+        //make matches[index].isOption=false
+        
+        //handle regenerating
+        
+        
+    
+        
+    }
+    //we should check to see if we can submit a get request specifying at least 3 stars
+    isDecent(/*pass restarant id or whole json object*/){
+    //parse out # of stars
+    //return whether or not it is at least 3 stars (bool)
+    }//
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+//test for connection between homepage input to entry.js
+  function takeValue(result){
+    result.push("test takeValue");
+    //testServer(result);
+    pushValue(result);
+
+    return result;
+    }
+
