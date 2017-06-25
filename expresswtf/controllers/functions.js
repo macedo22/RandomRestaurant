@@ -190,7 +190,7 @@ exports.httpRequest=function(req,res,next){
         var categoriesInput='';
         var form =new formidable.IncomingForm();
     
-        //form.parse(req,function(err,fields,files){
+        form.parse(req,function(err,fields,files){
           //  res.writeHead(200,{
                 //'content-type': 'text/plain'
            // });
@@ -202,7 +202,7 @@ exports.httpRequest=function(req,res,next){
             
             zipInput=fields.ZipCode;
             categoriesInput=fields.SelBranch;
-        //});
+        });
     
     const searchRequest = {
         location: zipInput,
