@@ -45,11 +45,11 @@ yelp.accessToken(clientId, clientSecret).then(response => {   // pass client cre
 'use strict';
 
 const numberOfResults=20;//subject to change
-var express = require('express');
+const express = require('express');
 const yelp = require('yelp-fusion');
 const http = require('http');
-var formidable = require("formidable");
-var util=require("util");
+const formidable = require("formidable");
+const util=require("util");
 
 
 
@@ -186,24 +186,24 @@ exports.httpRequest=function(req,res,next){
     
   
     //check that name field isn't empty
-    req.checkBody('ZipCode','Zip Code required').notEmpty();
+    //req.checkBody('ZipCode','Zip Code required').notEmpty();
  
     //Trim and escape the name field
-    req.sanitize('ZipCode').escape();
-    req.sanitize('ZipCode').trim();
+    //req.sanitize('ZipCode').escape();
+    //req.sanitize('ZipCode').trim();
 
     //Run validators
-    var errors = req.validationErrors();
+   // var errors = req.validationErrors();
 
     //store sanitized zipcode into new variable
-    var inputZipCode=req.body.ZipCode;
+    //var inputZipCode=req.body.ZipCode;
     
-    if(errors){
+    //if(errors){
         //if there are errors, render again--->need to implement this
-        res.send('BIG FAT ERROR WITH INPUT');
-        return;
-    }
-    else{
+       // res.send('BIG FAT ERROR WITH INPUT');
+       // return;
+    //}
+    //else{
         //Data from form is valid
         //submit request to yelp here?**************
         var results=[];
@@ -231,7 +231,7 @@ exports.httpRequest=function(req,res,next){
    
    
    
-    }
+    //}
     
 };
 
