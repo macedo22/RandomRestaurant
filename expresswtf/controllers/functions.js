@@ -189,7 +189,7 @@ exports.httpRequest=function(req,res,next){
         var inputScript = JSON.parse(req);
         
         var zipInput=inputScript.ZipCode;
-        var categoriesInput=inoutScript.SelBranch;
+        var categoriesInput=inputScript.SelBranch;
         
         
         //var form =new formidable.IncomingForm();
