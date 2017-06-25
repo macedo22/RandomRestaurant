@@ -226,7 +226,7 @@ exports.httpRequest=function(req,res,next){
         });
    }).catch(e => {
   console.log(e);*/
-});
+//});
     
     
     
