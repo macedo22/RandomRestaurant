@@ -188,7 +188,7 @@ exports.httpRequest=function(req,res,next){
         
         
         
-        console.log(req);
+        console.log(req.body);
         
         var inputScript = JSON.parse(req);
         
