@@ -8,7 +8,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/', functions_controller.httpRequest);
+//router.post('/', functions_controller.httpRequest);//add back after post works
+
+router.post('/' function(req,req,next){
+    res.send('Received post request WEEEEE');
+});
 
 
 module.exports = router;
