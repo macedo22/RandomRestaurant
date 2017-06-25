@@ -190,9 +190,9 @@ exports.httpRequest=function(req,res,next){
         
         console.log(req.body);
         
-        var inputScript = JSON.parse(req);
+        var inputScript = JSON.parse(req.body);
         
-        //console.log(inputScript);
+        console.log(inputScript);
         
         //var zipInput=inputScript.ZipCode;
         //var categoriesInput=inputScript.SelBranch;
