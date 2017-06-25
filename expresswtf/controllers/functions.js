@@ -213,6 +213,9 @@ exports.httpRequest=function(req,res,next){
         categories: categoriesInput
     };
     
+    res.send(searchRequest);
+    
+    /*
      yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
         const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
          client.search(searchRequest).then(response => {
@@ -222,7 +225,7 @@ exports.httpRequest=function(req,res,next){
             res.send(prettyJson);
         });
    }).catch(e => {
-  console.log(e);
+  console.log(e);*/
 });
     
     
