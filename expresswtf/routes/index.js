@@ -30,7 +30,7 @@ router.post('/', functions_controller.httpRequest);//add back after post works
             files: files
         }))
     })*/
-});
+//});
 
 
 module.exports = router;
