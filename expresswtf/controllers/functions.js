@@ -188,7 +188,7 @@ exports.httpRequest=function(req,res,next){
         
         var inputScript = JSON.parse(req);
         
-        console.log(inputscript);
+        console.log(inputScript);
         
         //var zipInput=inputScript.ZipCode;
         //var categoriesInput=inputScript.SelBranch;
