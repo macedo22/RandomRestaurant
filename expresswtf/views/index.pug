@@ -120,7 +120,7 @@ html
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       
       document.getElementById("demo").innerHTML = test.name;
-      document.getElementById("randomRestaurant").innerHTML =testArray[2];
+      document.getElementById("randomRestaurant").innerHTML =testArray[2].display_phone;
       
       function validate(evt)
       {
