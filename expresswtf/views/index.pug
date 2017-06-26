@@ -122,8 +122,6 @@ html
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       var randomIndex = Math.floor(Math.random() * (testArray.length));
 
-
-      document.getElementById("demo").innerHTML = test.name;
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
