@@ -239,7 +239,9 @@ exports.httpRequest=function(req,res,next){
             var choice = matches[randomIndex];
             
             
-            res.render('index', { messageTest: 'Post request render succeeded' });
+            res.render('index', { randomName: choice.name,
+                                  randomPhone: choice.display_phone,
+                                  randomAddress: choice.location.address1});
             
             
            // res.send("Zipcode: " + zipInput + "<br>"
