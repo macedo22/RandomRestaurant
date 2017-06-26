@@ -106,7 +106,7 @@
         </select>
         <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
-    <button id = "Regenerating" style = "visibility: hidden;" onclick="Regenerate()">Regenerate</button>
+    <button id = "Regenerating" style = "visibility: hidden;" onclick="Regenerate()">Regenerate!</button>
     <p id="getResults"></p>
     <p id = "demo"></p>
   
@@ -152,14 +152,7 @@
        }
       function Regenerate()
       {
-        if (result.length == 0)
-        {
-          window.alert("Empty values");
-        }
-        else
-        {
-          document.getElementById("demo").innerHTML = result + "Hello";
-        }
+          document.getElementById("demo").innerHTML = result + "Success";
       }
     </script>
   </body> 
