@@ -5,6 +5,7 @@ html
       var result = [];
       var choice;
       var randomName;
+      var matchesArray;
 
     script(type='text/javascript', src='/javascripts/entry.js')
     title What the Food!?
@@ -111,11 +112,16 @@ html
     p #{randomPhone}
     h4=randomAddress
     p #{randomAddress}
+    p#randomRestaurant
     script(language='JavaScript').
       <!--This function prevents the user from inputting letters as the zipcode-->
 
       var test = JSON.parse(!{JSON.stringify(randomName)});
+      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
+      
       document.getElementById("demo").innerHTML = test.name;
+      document.getElementById("randomRestaurant").innerHTML =testArray[2];
+      
       function validate(evt)
       {
       var theEvent = evt || window.event;
