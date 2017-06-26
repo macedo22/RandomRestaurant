@@ -240,7 +240,7 @@ exports.httpRequest=function(req,res,next){
                     + "Food type: " + categoriesInput + "<br><br>"
                     + "First result:<br>    " + firstResult.name + "<br>"
                     + firstResult.display_phone + "<br>"
-                    + firstResult.location.address1
+                    + firstResult.location.address1 + "<br>"
                     + "<a href=firstResult.url>Find me on yelp bitches </a><br><br>"
                     + "<img src=firstResult.image_url>");
         });
