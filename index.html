@@ -82,6 +82,11 @@
             font-family:Arial;
             font-size:20px;
         }
+        #Regenerating
+        {
+          position: absolute;
+          visibility: hidden;
+        }
 
       </style>
   </head>
@@ -106,7 +111,7 @@
         </select>
         <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
-    <button id = "Regenerating" style = "visibility: hidden;" onclick="Regenerate()">Regenerate!</button>
+    <button id = "Regenerating" onclick="Regenerate()">Regenerate!</button>
     <p id="getResults"></p>
     <p id = "demo"></p>
   
