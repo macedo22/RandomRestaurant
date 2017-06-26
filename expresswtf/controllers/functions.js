@@ -239,8 +239,8 @@ exports.httpRequest=function(req,res,next){
             res.send("Zipcode: " + zipInput + "<br>"
                     + "Food type: " + categoriesInput + "<br><br>"
                     + "First result:<br>    " + firstResult.name + "<br>"
-                    + firstResult.number + "<br>"
-                    + firstResult.location);
+                    + prettyJson.number + "<br>"
+                    + prettyJson.location);
         });
    }).catch(e => {
   console.log(e);
