@@ -3,7 +3,7 @@ html
   head
     script.
       var result = [];
-      var choice="";
+      var choice;
       var randomName="";
     script(type='text/javascript', src='/javascripts/entry.js')
     title What the Food!?
@@ -113,7 +113,7 @@ html
     script(language='JavaScript').
       <!--This function prevents the user from inputting letters as the zipcode-->
 
-      var test = JSON.parse( !{JSON.stringify(choice.name)} );
+      var test = JSON.parse( !{JSON.stringify(randomName)} );
       document.getElementById("demo").innerHTML = test;
       function validate(evt)
       {
