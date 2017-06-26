@@ -114,7 +114,7 @@ html
     script(language='JavaScript').
       <!--This function prevents the user from inputting letters as the zipcode-->
 
-      var test = JSON.stringify(randomName);
+      var test = JSON.stringify(#{randomName});
       document.getElementById("demo").innerHTML = test.name;
       function validate(evt)
       {
