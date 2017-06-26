@@ -112,15 +112,21 @@ html
     p #{randomPhone}
     h4=randomAddress
     p #{randomAddress}
-    p#randomRestaurant
+    p#randomRestaurantName
+    p#randomRestaurantPhone
+    p#randomRestaurantAddress
     script(language='JavaScript').
       <!--This function prevents the user from inputting letters as the zipcode-->
 
       var test = JSON.parse(!{JSON.stringify(randomName)});
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      
+      var randomIndex = Math.floor(Math.random() * (matches.length));
+
+
       document.getElementById("demo").innerHTML = test.name;
-      document.getElementById("randomRestaurant").innerHTML =testArray[2].display_phone;
+      document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
+      document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].phone;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
       
       function validate(evt)
       {
