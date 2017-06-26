@@ -150,23 +150,12 @@
        }
     </script>
       <form id = "Regenerating">
-        <input id="Regenerate" type="button" name="Regenerate" value="Regenerate" onclick="Regenerate();">
+        <input id="Regenerate" type="button" name="Regenerate" value="Regenerate!" onclick="Regenerate();">
       </form>
     <script>
       function Regenerate()
       {
-        Regenerating(result);
-      }
-      function Regenerating(result)
-      {
-        var x = 0;
-        var arr = result;
-        do
-        {
-          arr.push(x);
-        }while(x<2);
-        arr[1] = "Changed";
-        document.getElementById("getResults").innerHTML = arr;
+        document.getElementById("demo").innerHTML = result + "Hello";
       }
     </script>
   </body> 
