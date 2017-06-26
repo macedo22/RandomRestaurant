@@ -3,6 +3,8 @@ html
   head
     script.
       var result = [];
+      var choice;
+      var randomName="";
     script(type='text/javascript', src='/javascripts/entry.js')
     title What the Food!?
     meta(charset='windows-1252')
@@ -104,14 +106,15 @@ html
     p#demo
     h1= title
     p #{messageTest}
-    h2=randomName
-    p #{randomName}
     h3=randomPhone
     p #{randomPhone}
     h4=randomAddress
     p #{randomAddress}
     script(language='JavaScript').
       <!--This function prevents the user from inputting letters as the zipcode-->
+
+      var test = JSON.parse( !{JSON.stringify(randomName)} );
+      document.getElementById("demo").innerHTML = test;
       function validate(evt)
       {
       var theEvent = evt || window.event;
@@ -147,6 +150,5 @@ html
       }
       document.getElementById("getResults").innerHTML = results;
       result = results;
-      document.getElementById("demo").innerHTML = takeValue(result);
       }
       }
