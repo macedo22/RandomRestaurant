@@ -239,7 +239,6 @@ exports.httpRequest=function(req,res,next){
             var choice = matches[randomIndex];
             
             
-            
             res.send("Zipcode: " + zipInput + "<br>"
                     + "Food type: " + categoriesInput + "<br><br>"
                     + "First result:<br>    " + choice.name + "<br>"
@@ -264,7 +263,7 @@ exports.httpRequest=function(req,res,next){
                     + "First result:<br>    " + firstResult.name + "<br>"
                     + firstResult.display_phone + "<br>"
                     + firstResult.location.address1 + "<br>"
-                    + "<a href=firstResult.url>Find me on yelp</a><br><br>"
+                    + "<a href= >Find me on yelp</a><br><br>"
                     + "<img src=firstResult.image_url>");*/
         });
             
