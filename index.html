@@ -152,12 +152,13 @@
                 }
             }
           result = results;
-        document.getElementById("getResults").innerHTML = result + "test1";
+        document.getElementById("getResults").innerHTML = result;
         }
        }
       function Regenerate()
       {
-          document.getElementById("getResults").innerHTML = result + "Success";
+        result.push(" Button pressed");
+          document.getElementById("getResults").innerHTML = result;
       }
     </script>
   </body> 
