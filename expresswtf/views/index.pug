@@ -4,12 +4,7 @@ html
     script.
       var result = [];
       var choice;
-      var randomName= {
-            name: "none",
-            phone: "911",
-            address: "nowhere"
-
-};
+      var randomName;
 
     script(type='text/javascript', src='/javascripts/entry.js')
     title What the Food!?
@@ -119,8 +114,8 @@ html
     script(language='JavaScript').
       <!--This function prevents the user from inputting letters as the zipcode-->
 
-      var test = JSON.parse( !{JSON.stringify(randomName.name)} );
-      document.getElementById("demo").innerHTML = test;
+      var test = randomName;
+      document.getElementById("demo").innerHTML = test.name;
       function validate(evt)
       {
       var theEvent = evt || window.event;
