@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 
 var index = require('./routes/index');
+var favicon = require('serve-favicon');
 //var users = require('./routes/users');
 //var entry = require('./routes/entry');
 
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 app.use('/', index);
 //app.use('/', functions);
