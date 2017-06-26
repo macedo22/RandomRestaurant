@@ -241,10 +241,10 @@ exports.httpRequest=function(req,res,next){
                     + "First result:<br>    " + firstResult.name + "<br>"
                     + firstResult.display_phone + "<br>"
                     + firstResult.location.address1 + "<br>"
-                    //+ "<a href=firstResult.url>Find me on yelp bitches </a><br><br>"
+                    //+ "<a href=firstResult.url>Find me on yelp</a><br><br>"
                     //+ "<img src=firstResult.image_url>"
-                    + firstResult.url + "<br>"
-                    + firstResult.image_url + "<br>");
+                    //+ firstResult.url + "<br>"
+                    //+ firstResult.image_url + "<br>");
         });
    }).catch(e => {
   console.log(e);
