@@ -239,7 +239,7 @@ exports.httpRequest=function(req,res,next){
             var choice = matches[randomIndex];
             
             
-            res.render('index', { randomName: JSON.stringify(choice.name)});
+            res.render('index', { randomName: JSON.stringify(choice)});
             
             
            // res.send("Zipcode: " + zipInput + "<br>"
