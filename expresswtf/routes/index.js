@@ -7,7 +7,7 @@ var functions_controller=require('../controllers/functions');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { messageTest: 'Get request render succeeded' });
   //res.send('Received GET request WEEEEE');
 });
 

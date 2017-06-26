@@ -239,11 +239,14 @@ exports.httpRequest=function(req,res,next){
             var choice = matches[randomIndex];
             
             
-            res.send("Zipcode: " + zipInput + "<br>"
-                    + "Food type: " + categoriesInput + "<br><br>"
-                    + "First result:<br>    " + choice.name + "<br>"
-                    + choice.display_phone + "<br>"
-                    + choice.location.address1 + "<br>");
+            res.render('index', { messageTest: 'Post request render succeeded' });
+            
+            
+           // res.send("Zipcode: " + zipInput + "<br>"
+                   // + "Food type: " + categoriesInput + "<br><br>"
+                    //+ "First result:<br>    " + choice.name + "<br>"
+                   // + choice.display_phone + "<br>"
+                   // + choice.location.address1 + "<br>");
             
             
             
