@@ -145,6 +145,7 @@
                 }
             }
         document.getElementById("getResults").innerHTML = results + "Hi";
+          result = results;
         }
        }
     </script>    
@@ -154,18 +155,19 @@
     <script>
       function Regenerate()
       {
-        Regenerating(results);
+        Regenerating(result);
       }
-      function Regenerating(results)
+      function Regenerating(result)
       {
         var x = 0;
+        var arr = result;
         do
         {
-          results.push(x);
+          arr.push(x);
         }while(x<2);
-        results[1] = "Changed";
+        arr[1] = "Changed";
+        document.getElementById("getResults").innerHTML = arr;
       }
-      documents.getElementById("getResults").innerHTML = results;
-      }
+    </script>
   </body> 
 </html> 
