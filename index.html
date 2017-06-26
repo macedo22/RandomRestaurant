@@ -144,11 +144,28 @@
                 results.push(InvForm.SelBranch[x].value);
                 }
             }
-        document.getElementById("getResults").innerHTML = results;
-          result = results;
-          document.getElementById("demo").innerHTML = takeValue(result);
+        document.getElementById("getResults").innerHTML = results + "Hi";
         }
        }
     </script>    
+    <form id="FormCategories" name="Regenerating" method="post">
+        <input id="Regenerate" type="button" name="Regenerate" value="Regenerate!" class="bnotes" onclick="Regenerate();">
+    </form>
+    <script>
+      function Regenerate()
+      {
+        Regenerating(results);
+      }
+      function Regenerating(results)
+      {
+        var x = 0;
+        do
+        {
+          results.push(x);
+        }while(x<2);
+        results[1] = "Changed";
+      }
+      documents.getElementById("getResults").innerHTML = results;
+      }
   </body> 
 </html> 
