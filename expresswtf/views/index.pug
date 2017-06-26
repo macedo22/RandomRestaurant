@@ -82,6 +82,28 @@ html
       font-family:Arial;
       font-size:20px;
       }
+      #Regenerating
+      {
+      position:absolute;
+      visibility: hidden;
+      top:87%;
+      left:55%;
+      width:90px;
+      height:40px;
+      font-family:Arial;
+      font-size:13px;
+      background-color:#F8F8F8;
+      padding:5px;
+      border:solid 5px #53b4fd;
+      cursor:pointer;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      }
+      #Regenerating:hover
+      {
+      background-color:#53b4fd;
+      color: white;
+      }
   body
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
     br
@@ -104,6 +126,7 @@ html
         option(value='desserts') Dessert
         option(value='vegan') Vegan
       input#FeedMe.bnotes(type='submit', name='ViewReport', value='Feed Me!', onclick='GetInventory();')
+      button#Regenerating(onclick='Regenerate()') Regenerate!
     p#getResults
     p#demo
     h1= title
@@ -151,14 +174,28 @@ html
       }
       else
       {
-      for (x=0;x<InvForm.SelBranch.length;x++)
+       Regenerating.style.visibility = "visible";
+       for (x=0;x<InvForm.SelBranch.length;x++)
       {
       if (InvForm.SelBranch[x].selected)
       {
       results.push(InvForm.SelBranch[x].value);
       }
       }
-      document.getElementById("getResults").innerHTML = results;
-      result = results;
+  result = results;
+  document.getElementById("getResults").innerHTML = result;
+      {
+      if (InvForm.SelBranch[x].selected)
+      {
+      results.push(InvForm.SelBranch[x].value);
       }
+      }
+      result = results;
+      document.getElementById("getResults").innerHTML = results;
+      }
+      }
+        function Regenerate()
+      {
+         result.push(" Button pressed");
+         document.getElementById("getResults").innerHTML = result;
       }
