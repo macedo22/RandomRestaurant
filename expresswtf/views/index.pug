@@ -120,7 +120,7 @@ html
 
       var test = JSON.parse(!{JSON.stringify(randomName)});
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      var randomIndex = Math.floor(Math.random() * (matches.length));
+      var randomIndex = Math.floor(Math.random() * (testArray.length));
 
 
       document.getElementById("demo").innerHTML = test.name;
