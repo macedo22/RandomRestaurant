@@ -233,17 +233,39 @@ exports.httpRequest=function(req,res,next){
      yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
         const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
          client.search(searchRequest).then(response => {
-            const firstResult = response.jsonBody.businesses[0];
-            const prettyJson = JSON.stringify(firstResult, null, 4);
-            console.log(prettyJson);
+            //const firstResult = response.jsonBody.businesses[0];
+            const matches = response.jsonBody.businesses;
+            var randomIndex = Math.floor(Math.random() * (matches.length));
+            var choice = matches[randomIndex];
             res.send("Zipcode: " + zipInput + "<br>"
+                    + "Food type: " + categoriesInput + "<br><br>"
+                    + "First result:<br>    " + choice.name + "<br>"
+                    + choice.display_phone + "<br>"
+                    + choice.location.address1 + "<br>");
+            
+            
+            
+            
+            const prettyJson=JSON.stringify(choice, null, 4);
+            //const prettyJson = JSON.stringify(firstResult, null, 4);
+            console.log(prettyJson);
+            
+            
+            
+            
+            
+            
+            //this prints business info to the browser in plain html
+            /*res.send("Zipcode: " + zipInput + "<br>"
                     + "Food type: " + categoriesInput + "<br><br>"
                     + "First result:<br>    " + firstResult.name + "<br>"
                     + firstResult.display_phone + "<br>"
                     + firstResult.location.address1 + "<br>"
                     + "<a href=firstResult.url>Find me on yelp</a><br><br>"
-                    + "<img src=firstResult.image_url>");
+                    + "<img src=firstResult.image_url>");*/
         });
+            
+            
    }).catch(e => {
   console.log(e);
     });
@@ -309,7 +331,7 @@ exports.httpRequest=function(req,res,next){
    
     //}
     
-};
+    };
 
 function testServer(result)
 {
