@@ -236,7 +236,11 @@ exports.httpRequest=function(req,res,next){
             const firstResult = response.jsonBody.businesses[0];
             const prettyJson = JSON.stringify(firstResult, null, 4);
             console.log(prettyJson);
-            res.send(prettyJson);
+            res.send("Zipcode: " + zipInput + "<br>"
+                    + "Food type: " + categoriesInput + "<br><br>"
+                    + "First result:<br>    " + firstResult.name + "<br>"
+                    + firstResult.phoneNumber + "<br>"
+                    + firstResult.address);
         });
    }).catch(e => {
   console.log(e);
