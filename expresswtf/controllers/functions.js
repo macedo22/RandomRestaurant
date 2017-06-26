@@ -236,13 +236,15 @@ exports.httpRequest=function(req,res,next){
             const firstResult = response.jsonBody.businesses[0];
             const prettyJson = JSON.stringify(firstResult, null, 4);
             console.log(prettyJson);
+            var businessUrl=firstResult.url;
+            var businessImageUrl=firstResult.image_url;
             res.send("Zipcode: " + zipInput + "<br>"
                     + "Food type: " + categoriesInput + "<br><br>"
                     + "First result:<br>    " + firstResult.name + "<br>"
                     + firstResult.display_phone + "<br>"
                     + firstResult.location.address1 + "<br>"
-                    + "<a href=firstResult.url>Find me on yelp bitches </a><br><br>"
-                    + "<img src=firstResult.image_url>");
+                    + "<a href=businessUrl>Find me on yelp bitches </a><br><br>"
+                    + "<img src=businessImageUrl>");
         });
    }).catch(e => {
   console.log(e);
