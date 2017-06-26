@@ -106,6 +106,9 @@
         </select>
         <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
+    <form id = "Regenerate" method = "post">
+      <input id = "Regenerating" type = "submit" value = "Regenerate" onclick = "Regenerate();">
+    </form>
     <p id="getResults"></p>
     <p id = "demo"></p>
   
@@ -144,11 +147,21 @@
                 results.push(InvForm.SelBranch[x].value);
                 }
             }
-        document.getElementById("getResults").innerHTML = results;
           result = results;
-          document.getElementById("demo").innerHTML = takeValue(result);
+        document.getElementById("getResults").innerHTML = result + "Hi";
         }
        }
-    </script>    
+      function Regenerate()
+      {
+        if (result.length == 0)
+        {
+          window.alert("Empty values");
+        }
+        else
+        {
+          document.getElementById("demo").innerHTML = result + "Hello";
+        }
+      }
+    </script>
   </body> 
 </html> 
