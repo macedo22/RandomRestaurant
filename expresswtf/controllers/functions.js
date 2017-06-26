@@ -237,6 +237,9 @@ exports.httpRequest=function(req,res,next){
             const matches = response.jsonBody.businesses;
             var randomIndex = Math.floor(Math.random() * (matches.length));
             var choice = matches[randomIndex];
+            
+            
+            
             res.send("Zipcode: " + zipInput + "<br>"
                     + "Food type: " + categoriesInput + "<br><br>"
                     + "First result:<br>    " + choice.name + "<br>"
