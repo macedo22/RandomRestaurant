@@ -67,11 +67,18 @@
             left:20%;
             width:90px;
             height:40px;
-            font:Arial;
+            font-family:Arial;
             font-size:13px;
+            background-color:#F8F8F8;
             padding:5px;
             border:solid 5px #53b4fd;
             cursor:pointer;
+        }
+        
+        #FeedMe:hover
+        {
+          background-color:#53b4fd;
+          color: white;
         }
         
         #getResults
@@ -81,6 +88,30 @@
             left:40%;
             font-family:Arial;
             font-size:20px;
+        }
+        
+        #Regenerating
+        {
+          position:absolute;
+          visibility: hidden;
+          top:87%;
+          left:55%;
+          width:90px;
+          height:40px;
+          font-family:Arial;
+          font-size:13px;
+          background-color:#F8F8F8;
+          padding:5px;
+          border:solid 5px #53b4fd;
+          cursor:pointer;
+          -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+        }
+        
+        #Regenerating:hover
+        {
+          background-color:#53b4fd;
+          color: white;
         }
 
       </style>
@@ -106,9 +137,7 @@
         </select>
         <input id="FeedMe" type="button" name="ViewReport" value="Feed Me!" class="bnotes" onclick="GetInventory();">
     </form>
-    <form id = "Regenerate" method = "post">
-      <input id = "Regenerating" type = "submit" value = "Regenerate" onclick = "Regenerate();">
-    </form>
+    <button id="Regenerating" onclick="Regenerate()">Regenerate!</button>
     <p id="getResults"></p>
     <p id = "demo"></p>
   
@@ -140,6 +169,7 @@
         }
         else
         {
+          Regenerating.style.visibility = "visible";
          for (x=0;x<InvForm.SelBranch.length;x++)
             {
                 if (InvForm.SelBranch[x].selected)
@@ -148,19 +178,13 @@
                 }
             }
           result = results;
-        document.getElementById("getResults").innerHTML = result + "Hi";
+        document.getElementById("getResults").innerHTML = result;
         }
        }
       function Regenerate()
       {
-        if (result.length == 0)
-        {
-          window.alert("Empty values");
-        }
-        else
-        {
-          document.getElementById("demo").innerHTML = result + "Hello";
-        }
+        result.push(" Button pressed");
+          document.getElementById("getResults").innerHTML = result;
       }
     </script>
   </body> 
