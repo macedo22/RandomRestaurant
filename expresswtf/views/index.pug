@@ -167,14 +167,6 @@ html
       input#FeedMe.bnotes(type='submit', name='ViewReport', value='Feed Me!', onclick='GetInventory();')
     button#Regenerating(onclick='Regenerate()') Regenerate!
 
-    p#getResults
-    //p#demo
-    //h1= title
-    //p#{messageTest}
-    //h3=randomPhone
-    //p#{randomPhone}
-    //h4=randomAddress
-    //p#{randomAddress}
     p#randomRestaurantName
     p#randomRestaurantPhone
     p#randomRestaurantAddress
@@ -208,6 +200,7 @@ html
       }
       }
       
+      //GetInventory gets the ZipCode & Categories
       function GetInventory()
       {
         var InvForm = document.forms.InventoryList;
@@ -235,6 +228,7 @@ html
       }
       }
       
+      //Regenerate gets a new restaurant to display when regenerate button is clicked
       function Regenerate()
       {
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
