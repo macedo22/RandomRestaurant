@@ -54,7 +54,8 @@ exports.httpRequest=function(req,res,next){
          client.search(searchRequest).then(response => {
             //const firstResult = response.jsonBody.businesses[0];
             const matches = response.jsonBody.businesses;
-            res.render('index', {matchesArray: JSON.stringify(matches)});
+            var shuffled = shuffle(matches);
+            res.render('index', {matchesArray: JSON.stringify(shuffled)});
            
             const prettyJson=JSON.stringify(matches, null, 4);
             console.log(prettyJson);
