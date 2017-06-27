@@ -184,8 +184,8 @@ html
     p#randomRestaurantPhoto
  
     script(language='JavaScript').
-      //var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      //var randomIndex = Math.floor(Math.random() * (testArray.length));
+      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
+      var randomIndex = Math.floor(Math.random() * (testArray.length));
       
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
@@ -245,7 +245,7 @@ html
       }
       
       function Regenerate()
-      {
+      {  
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       var randomIndex = Math.floor(Math.random() * (testArray.length));
       
