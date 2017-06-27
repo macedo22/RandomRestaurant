@@ -180,7 +180,7 @@ html
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
-      img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
+      //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
       
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
@@ -203,19 +203,18 @@ html
         var x = 0;
         var results = []; //results meaning the zipcode
         // Get the value of the input field with id="ZipCode"
-        //results.push(document.getElementById("ZipCode").value);
+        //results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
         if (results[0].length != 5)
         {
           window.alert("Please enter in a valid zip code");
         }
         else
         {
-          //Regenerating.style.visibility = "visible";
           for (x=0;x<InvForm.SelBranch.length;x++)
           {
             if (InvForm.SelBranch[x].selected)
             {
-              //results.push(InvForm.SelBranch[x].value);
+              //results.push(InvForm.SelBranch[x].value); Displays category(ies) selected (for testing purposes)
               
             }
           }
