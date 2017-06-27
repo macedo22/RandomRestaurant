@@ -12,7 +12,7 @@ html
     style.
       body
       {
-      background: url("wtflogo.jpg");
+      background: url("/images/wtflogo.jpg");
       background-repeat: no-repeat;
       background-size: 550px 320px;
       background-position: 50% 5%;
@@ -109,9 +109,9 @@ html
       color: white;
       }
   body
-    img#Location(src='location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
+    img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
     br
-    img#INeed(src='ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
+    img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
       input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', required='')
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
