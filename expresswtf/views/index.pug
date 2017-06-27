@@ -260,20 +260,21 @@ html
       //Regenerate gets a new restaurant to display when regenerate button is clicked
       function Regenerate()
       {
-      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      //var randomIndex = Math.floor(Math.random() * (testArray.length));
-      
-      if(index<testArray.length){
-      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
-      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
-      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-      index++;
-      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+        var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
+        //var randomIndex = Math.floor(Math.random() * (testArray.length));
+
+        if(index<testArray.length){
+        document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
+        document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
+        document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
+        document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+        document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+        index++;
+        Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
       
         else{
+            Regenerating.style.visibility = "hidden"; //hides the REGENERATE button when results done
             document.getElementById("noMoreResults").innerHTML ="No more fudz";
         }
       }
