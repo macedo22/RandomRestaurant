@@ -191,12 +191,12 @@ html
           }
           result = results;
           document.getElementById("getResults").innerHTML = result;
+          Regenerating.style.visibility = "visible";
       }
       }
       
       function Regenerate()
       {
       result.push(" Button pressed");
-      Regenerating.style.visibility = "visible";
       document.getElementById("getResults").innerHTML = result;
       }
