@@ -10,14 +10,6 @@ html
       var images = "/images/Yelp_trademark_RGB_outline.png";
       var address = "https://www.yelp.com";
       
-      var img = new Image();
-      img.src = images;
-      img.onclick = function()
-      {
-      window.location.href = address;
-      }
-    document.body.appendChild(img);
-      
     title What the Food!?
     meta(charset='windows-1252')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -165,6 +157,15 @@ html
       
   body
     //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
+    script(type='text/javascript'). 
+      var img = new Image();
+      img.src = images;
+      img.onclick = function()
+      {
+      window.location.href = address;
+      }
+    document.body.appendChild(img);
+    
     a(href='https://www.yelp.com')
     img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:80px;height:50px;')
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
