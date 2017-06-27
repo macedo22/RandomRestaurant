@@ -197,6 +197,15 @@ html
       document.getElementById("randomRestaurantRating").innerHTML =testArray[randomIndex].rating;
       //document.getElementById("randomRestaurantImage").innerHTML = testArray[randomIndex]."image_url";
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      
+      var img = new Image();
+      img.src = images;
+      img.onclick = function()
+      {
+          window.location.href = address;
+      }
+      document.body.appendChild(img);
+      
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
       {
@@ -236,13 +245,6 @@ html
           }
           result = results;
           document.getElementById("getResults").innerHTML = result;
-          var img = new Image();
-          img.src = images;
-          img.onclick = function()
-          {
-            window.location.href = address;
-          }
-          document.body.appendChild(img);
       }
       }
       
