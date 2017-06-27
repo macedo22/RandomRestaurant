@@ -178,6 +178,7 @@ html
     p#randomRestaurantCity
     p#randomRestaurantPrice
     p#randomResetaurantImage
+    p#randomRestaurantRating
     
     script(language='JavaScript').
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
@@ -187,6 +188,7 @@ html
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
+      document.getElementById("randomRestaurantRating").innerHTML =testArray[randomIndex].rating;
       //document.getElementById("randomRestaurantImage").innerHTML = testArray[randomIndex]."image_url";
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       <!--This function prevents the user from inputting letters as the zipcode-->
@@ -241,5 +243,6 @@ html
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
+      document.getElementById("randomRestaurantRating").innerHTML =testArray[randomIndex].rating;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
