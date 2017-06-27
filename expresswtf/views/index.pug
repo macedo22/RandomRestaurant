@@ -133,7 +133,14 @@ html
       font-family:Tahoma;
       font-size:21px;
       }
-      
+      #randomRestaurantReviews
+      {
+      position:absolute;
+      top:70%;
+      left:40%;
+      font-family:Tahoma;
+      font-size:21px;
+      }
       
   body
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
@@ -170,15 +177,15 @@ html
     p#randomRestaurantName
     p#randomRestaurantPhone
     p#randomRestaurantAddress
-
+    p#randomRestaurantReviews
     script(language='JavaScript').
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       var randomIndex = Math.floor(Math.random() * (testArray.length));
 
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
-
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].reviews;
 
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
