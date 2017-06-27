@@ -126,6 +126,14 @@ html
       font-family:Helvetica;
       font-size:15px;
       }
+      #YelpLogo
+      {
+      position:absolute;
+      top:85%;
+      left:60%;
+      width:20px;
+      height:15px;
+      }
       
       #Regenerating
       {
@@ -185,6 +193,8 @@ html
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
       document.getElementById("randomRestaurantImage").innerHTML = testArray[randomIndex]."image_url";
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      
+      img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:180px;height:70px;');
       
       //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
       
