@@ -1,6 +1,6 @@
 'use strict';
 
-const numberOfResults=20;//subject to change
+const numberOfResults=50;//subject to change
 const express = require('express');
 const yelp = require('yelp-fusion');
 const http = require('http');
@@ -31,7 +31,7 @@ exports.httpRequest=function(req,res,next){
     const searchRequest = {
         location: zipInput,
         categories: categoriesInput,
-        limit: 50
+        limit: numberOfResults
     };
     
    
