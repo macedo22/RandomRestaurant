@@ -258,20 +258,19 @@ html
       {
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       
-     // if(index<testArray.length){
-      //  document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
-        //document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
-        //document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
-        //document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-        //document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-        //Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      if(index<testArray.length){
+        document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
+        document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
+        document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
+        document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+        document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+        Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
 
-        //index++;
-      //}
+      index++;
 
-      //else{
-            //document.getElementById("randomRestaurantName").innerHTML = "No more fudz";
-      //}
+
+
+       }
      
       
     }
