@@ -7,7 +7,6 @@ html
       var randomName;
       var matchesArray;
       
-
       //var rating = testArray[randomIndex].rating;
       var rating;
       var images = "/images/Yelp_trademark_RGB_outline.png";
@@ -260,12 +259,13 @@ html
       function Regenerate()
       {
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      var randomIndex = Math.floor(Math.random() * (testArray.length));
+      //var randomIndex = Math.floor(Math.random() * (testArray.length));
       
-      document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
-      document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
-      document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
-      document.getElementById("randomRestaurantRating").innerHTML =testArray[randomIndex].rating;
+      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
+      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
+      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+      index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
