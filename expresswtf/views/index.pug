@@ -181,10 +181,7 @@ html
         }
         else
         {
-          if(results[0].length == 5)
-          {
-            Regenerating.style.visibility = "visible";
-          }
+          Regenerating.style.visibility = "visible";
           for (x=0;x<InvForm.SelBranch.length;x++)
           {
             if (InvForm.SelBranch[x].selected)
@@ -200,5 +197,6 @@ html
       function Regenerate()
       {
       result.push(" Button pressed");
+      Regenerating.style.visibility = "visible";
       document.getElementById("getResults").innerHTML = result;
       }
