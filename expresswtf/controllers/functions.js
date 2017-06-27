@@ -17,6 +17,20 @@ const clientSecret = 'sU7Db2PGwyTiFk338fP1YX7CSlpTyp8NZ7ap3wvOILXLV8yK3KDN5tR3oO
     //return whether or not it is at least 3 stars (bool)
     //}*/
     
+    function shuffle(array) {
+    if(array.length===0){
+        res.send("We did not find any matches for this search criteria! :(");
+    }
+        
+        for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+};
+    
 
 
 exports.httpRequest=function(req,res,next){
@@ -49,12 +63,3 @@ exports.httpRequest=function(req,res,next){
   console.log(e);
     });
   };
-//we should check to see if we can submit a get request specifying at least 3 stars
-function isDecent(/*pass restarant id or whole json object*/){
-    //parse out # of stars
-    //return whether or not it is at least 3 stars (bool)
-};//
-
-//function isArray(myArray) {
- //   return myArray.constructor.toString().indexOf("Array") > -1;  // validates that object passed is an array
-//};
