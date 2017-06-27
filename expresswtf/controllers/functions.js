@@ -48,13 +48,13 @@ exports.httpRequest=function(req,res,next){
    }).catch(e => {
   console.log(e);
     });
-
+  };
 //we should check to see if we can submit a get request specifying at least 3 stars
 function isDecent(/*pass restarant id or whole json object*/){
     //parse out # of stars
     //return whether or not it is at least 3 stars (bool)
 };//
 
-function isArray(myArray) {
-    return myArray.constructor.toString().indexOf("Array") > -1;  // validates that object passed is an array
-};
+//function isArray(myArray) {
+ //   return myArray.constructor.toString().indexOf("Array") > -1;  // validates that object passed is an array
+//};
