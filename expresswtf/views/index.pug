@@ -172,6 +172,7 @@ html
     p#randomRestaurantAddress
     p#randomRestaurantImageURL
     p#randomRestaurantCity
+    p#randomRestaurantPrice
  
     script(language='JavaScript').
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
@@ -182,6 +183,7 @@ html
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
       document.getElementById("randomRestaurantImageURL").innerHTML =testArray[randomIndex].image_url;
       document.getElementById("randomRestaurantCity").innerHTML =testArray[randomIndex].location.city;
+      document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
