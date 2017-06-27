@@ -32,7 +32,7 @@ html
       left:0%;
       width:135px;
       height:15px;
-      font:Arial;
+      font:Helvetica;
       font-size:15px;
       padding:10px;
       border: solid 5px #53b4fd;
@@ -66,7 +66,7 @@ html
       left:20%;
       width:90px;
       height:40px;
-      font-family:Arial;
+      font-family:Helvetica;
       font-size:13px;
       background-color:#F8F8F8;
       padding:5px;
@@ -83,7 +83,7 @@ html
       position:absolute;
       top:50%;
       left:40%;
-      font-family:Arial;
+      font-family:Helvetica;
       font-size:20px;
       }
       #ResultImg
@@ -99,7 +99,7 @@ html
       position:absolute;
       top:60%;
       left:40%;
-      font-family:Tahoma;
+      font-family:Helvetica;
       font-size:30px;
       }
       #randomRestaurantPhone
@@ -107,7 +107,7 @@ html
       position:absolute;
       top:70%;
       left:40%;
-      font-family:Tahoma;
+      font-family:Helvetica;
       font-size:21px;
       }
       #randomRestaurantAddress
@@ -115,7 +115,7 @@ html
       position:absolute;
       top:77%;
       left:40%;
-      font-family:Tahoma;
+      font-family:Helvetica;
       font-size:21px;
       }
       #randomRestaurantPrice
@@ -123,7 +123,7 @@ html
       position:absolute;
       top:85%;
       left:40%;
-      font-family:Tahoma;
+      font-family:Helvetica;
       font-size:15px;
       }
       
@@ -131,11 +131,11 @@ html
       {
       position:absolute;
       visibility: hidden;
-      top:90%;
+      top:95%;
       left:55%;
       width:90px;
       height:40px;
-      font-family:Arial;
+      font-family:Helvetica;
       font-size:13px;
       background-color:#F8F8F8;
       padding:5px;
@@ -167,22 +167,12 @@ html
       input#FeedMe.bnotes(type='submit', name='ViewReport', value='Feed Me!', onclick='GetInventory();')
     button#Regenerating(onclick='Regenerate()') Regenerate!
 
-    p#getResults
-    p#demo
-    h1= title
-    p #{messageTest}
-    h3=randomPhone
-    p #{randomPhone}
-    h4=randomAddress
-    p #{randomAddress}
     p#randomRestaurantName
     p#randomRestaurantPhone
     p#randomRestaurantAddress
     p#randomRestaurantImageURL
     p#randomRestaurantCity
     p#randomRestaurantPrice
-    //p#randomRestaurantPhoto
-    //img(src=#{randomRestaurantPhoto})
  
     script(language='JavaScript').
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
@@ -190,17 +180,9 @@ html
       
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
-      document.getElementById("randomRestaurantImageURL").innerHTML =testArray[randomIndex].image_url;
-      document.getElementById("randomRestaurantCity").innerHTML =testArray[randomIndex].location.city;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
-      document.getElementById("randomRestaurantPhoto").innerHTML =testArray[randomIndex].photos[0];
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
-      //document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
-      //document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
-      //document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
-      //.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
-      //Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
       
@@ -218,6 +200,7 @@ html
       }
       }
       
+      //GetInventory gets the ZipCode & Categories
       function GetInventory()
       {
         var InvForm = document.forms.InventoryList;
@@ -245,16 +228,15 @@ html
       }
       }
       
+      //Regenerate gets a new restaurant to display when regenerate button is clicked
       function Regenerate()
-      {  
+      {
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       var randomIndex = Math.floor(Math.random() * (testArray.length));
       
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
-      document.getElementById("randomRestaurantPhoto").innerHTML =testArray[randomIndex].photos[0];
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
-      document.getElementById("randomRestaurantCity").innerHTML =testArray[randomIndex].location.city;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
