@@ -140,7 +140,7 @@
     <button id="Regenerating" onclick="Regenerate()">Regenerate!</button>
     <p id="getResults"></p>
     <p id = "demo"></p>
-    <p id = "images"></p>
+    <p id = "imagess"></p>
     <script language="JavaScript">
         <!--This function prevents the user from inputting letters as the zipcode-->
        function validate(evt) 
@@ -161,7 +161,7 @@
          var SelBranchVal = "";
          var x = 0;         
          var results = [];
-         var images = "/expresswtf/public/images/Yelp_trademark_RGB_outline.png";
+         var images = "Yelp_trademark_RGB_outline.png";
          var address = "https://www.yelp.com";
          // Get the value of the input field with id="ZipCode"
         results.push(document.getElementById("ZipCode").value);
@@ -180,7 +180,7 @@
                 }
             }
           result = results;
-        document.getElementById("getResults").innerHTML = result + "Hi";
+        document.getElementById("getResults").innerHTML = result + "Hello";
           var img = new Image();
           img.src = images;
           img.onclick = function()
