@@ -130,12 +130,8 @@ html
         option(value='desserts') Dessert
         option(value='vegan') Vegan
       input#FeedMe.bnotes(type='submit', name='ViewReport', value='Feed Me!', onclick='GetInventory();')
-<<<<<<< HEAD
     button#Regenerating(onclick='Regenerate()') Regenerate!
 
-=======
-      button#Regenerating(onclick='Regenerate()') Regenerate!
->>>>>>> be36a6a434c0430959bf63e68b09b335c1b38f18
     p#getResults
     p#demo
     h1= title
@@ -184,21 +180,8 @@ html
       }
       else
       {
-<<<<<<< HEAD
       Regenerating.style.visibility = "visible";
       for (x=0;x<InvForm.SelBranch.length;x++)
-=======
-       Regenerating.style.visibility = "visible";
-       for (x=0;x<InvForm.SelBranch.length;x++)
-      {
-      if (InvForm.SelBranch[x].selected)
-      {
-      results.push(InvForm.SelBranch[x].value);
-      }
-      }
-  result = results;
-  document.getElementById("getResults").innerHTML = result;
->>>>>>> be36a6a434c0430959bf63e68b09b335c1b38f18
       {
       if (InvForm.SelBranch[x].selected)
       {
@@ -206,17 +189,8 @@ html
       }
       }
       result = results;
-<<<<<<< HEAD
       document.getElementById("getResults").innerHTML = result;
-=======
-      document.getElementById("getResults").innerHTML = results;
       }
->>>>>>> be36a6a434c0430959bf63e68b09b335c1b38f18
-      }
-        function Regenerate()
-      {
-         result.push(" Button pressed");
-         document.getElementById("getResults").innerHTML = result;
       }
       function Regenerate()
       {
