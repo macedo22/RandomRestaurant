@@ -97,7 +97,7 @@ html
       #randomRestaurantName
       {
       position:absolute;
-      top:55%;
+      top:60%;
       left:40%;
       font-family:Tahoma;
       font-size:30px;
@@ -105,7 +105,7 @@ html
       #randomRestaurantPhone
       {
       position:absolute;
-      top:65%;
+      top:70%;
       left:40%;
       font-family:Tahoma;
       font-size:21px;
@@ -113,7 +113,7 @@ html
       #randomRestaurantAddress
       {
       position:absolute;
-      top:70%;
+      top:80%;
       left:40%;
       font-family:Tahoma;
       font-size:21px;
@@ -123,7 +123,7 @@ html
       {
       position:absolute;
       visibility: hidden;
-      top:87%;
+      top:90%;
       left:55%;
       width:90px;
       height:40px;
@@ -174,11 +174,13 @@ html
     script(language='JavaScript').
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       var randomIndex = Math.floor(Math.random() * (testArray.length));
-      //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
+      
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      
+      img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
       
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
