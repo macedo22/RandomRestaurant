@@ -9,6 +9,8 @@ html
       
       var images = "/images/Yelp_trademark_RGB_outline.png";
       var address = "https://www.yelp.com";
+
+      var index=0;
       
     title What the Food!?
     meta(charset='windows-1252')
@@ -188,14 +190,14 @@ html
     script(language='JavaScript').
      
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      var randomIndex = Math.floor(Math.random() * (testArray.length));
+      //var randomIndex = Math.floor(Math.random() * (testArray.length));
       
-      document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
-      document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
-      document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
-      document.getElementById("randomRestaurantRating").innerHTML =testArray[randomIndex].rating;
-      //document.getElementById("randomRestaurantImage").innerHTML = testArray[randomIndex]."image_url";
+      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
+      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
+      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+      //document.getElementById("randomRestaurantImage").innerHTML = testArray[index]."image_url";
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       var img = new Image();
@@ -256,12 +258,15 @@ html
       function Regenerate()
       {
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      var randomIndex = Math.floor(Math.random() * (testArray.length));
+      //var randomIndex = Math.floor(Math.random() * (testArray.length));
       
-      document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
-      document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.display_address;
-      document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
-      document.getElementById("randomRestaurantRating").innerHTML =testArray[randomIndex].rating;
+      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
+      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
+      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+
+      index++;
+      
       }

@@ -52,12 +52,11 @@ exports.httpRequest=function(req,res,next){
      yelp.accessToken(clientId, clientSecret).then(response => {   // pass client credentials
         const client = yelp.client(response.jsonBody.access_token);  //client now holds token in json form?-like the post call
          client.search(searchRequest).then(response => {
-            //const firstResult = response.jsonBody.businesses[0];
             const matches = response.jsonBody.businesses;
             var shuffled = shuffle(matches);
             res.render('index', {matchesArray: JSON.stringify(shuffled)});
            
-            const prettyJson=JSON.stringify(matches, null, 4);
+            const prettyJson=JSON.stringify(shuffled, null, 4);
             console.log(prettyJson);
         });                    
    }).catch(e => {
