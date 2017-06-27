@@ -188,6 +188,7 @@ html
     p#randomRestaurantPrice
     p#randomResetaurantImage
     p#randomRestaurantRating
+    p#noMoreResults
     
     script(language='JavaScript').
      
@@ -199,6 +200,7 @@ html
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
       document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
       //document.getElementById("randomRestaurantImage").innerHTML = testArray[index]."image_url";
+      index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       var img = new Image();
@@ -261,6 +263,7 @@ html
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       //var randomIndex = Math.floor(Math.random() * (testArray.length));
       
+      if(index<testArray.length){
       document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
@@ -268,4 +271,9 @@ html
       document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      }
+      
+        else{
+            document.getElementById("noMoreResults").innerHTML ="No more fudz";
+        }
       }
