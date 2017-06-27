@@ -181,7 +181,8 @@ html
     p#randomRestaurantImageURL
     p#randomRestaurantCity
     p#randomRestaurantPrice
-    p#randomRestaurantPhoto
+    //p#randomRestaurantPhoto
+    img(src=#{randomRestaurantPhoto})
  
     script(language='JavaScript').
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
