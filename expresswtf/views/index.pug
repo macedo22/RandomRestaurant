@@ -236,6 +236,13 @@ html
           }
           result = results;
           document.getElementById("getResults").innerHTML = result;
+          var img = new Image();
+          img.src = images;
+          img.onclick = function()
+          {
+            window.location.href = address;
+          }
+          document.body.appendChild(img);
       }
       }
       
