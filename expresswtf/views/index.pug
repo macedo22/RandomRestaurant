@@ -160,12 +160,9 @@ html
       
   body
     //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
-    img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:180px;height:70px;');
     
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
-    
     br
-    
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
       input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', required='')
@@ -198,7 +195,7 @@ html
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[randomIndex].price;
       //document.getElementById("randomRestaurantImage").innerHTML = testArray[randomIndex]."image_url";
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
-      
+      //img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:180px;height:70px;');
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
       {
