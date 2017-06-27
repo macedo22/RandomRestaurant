@@ -177,7 +177,8 @@ html
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
-
+      Regenerating.style.visibility = "visible";
+      
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
       {
@@ -197,7 +198,7 @@ html
         var InvForm = document.forms.InventoryList;
         var SelBranchVal = "";
         var x = 0;
-        var results = [];
+        var results = []; //results meaning the zipcode
         // Get the value of the input field with id="ZipCode"
         results.push(document.getElementById("ZipCode").value);
         if (results[0].length != 5)
@@ -211,7 +212,6 @@ html
           {
             if (InvForm.SelBranch[x].selected)
             {
-              Regenerating.style.visibility = "visible";
               results.push(InvForm.SelBranch[x].value);
               
             }
