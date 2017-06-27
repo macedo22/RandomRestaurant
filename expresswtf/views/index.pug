@@ -156,7 +156,7 @@ html
         option(value='desserts') Dessert
         option(value='vegan') Vegan
       input#FeedMe.bnotes(type='submit', name='ViewReport', value='Feed Me!', onclick='GetInventory();')
-    button#Regenerating(onclick='Regenerate()') Regenerate!
+    //button#Regenerating(onclick='Regenerate()') Regenerate!
 
     p#getResults
     p#demo
@@ -177,7 +177,8 @@ html
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
-      Regenerating.style.visibility = "visible";
+      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      button#Regenerating(onclick='Regenerate()') Regenerate!
       
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
@@ -223,6 +224,11 @@ html
       
       function Regenerate()
       {
-      result.push(" Button pressed");
-      document.getElementById("getResults").innerHTML = result;
+      /*result.push(" Button pressed");
+      document.getElementById("getResults").innerHTML = result;*/
+      document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
+      document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
+      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      button#Regenerating(onclick='Regenerate()') Regenerate!
       }
