@@ -174,7 +174,7 @@ html
     script(language='JavaScript').
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       var randomIndex = Math.floor(Math.random() * (testArray.length));
-      img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
+      //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
