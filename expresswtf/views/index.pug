@@ -86,6 +86,39 @@ html
       font-family:Arial;
       font-size:20px;
       }
+      #ResultImg
+      {
+      position:absolute;
+      top:50%;
+      left:40%;
+      width:100px;
+      height:15px;
+      }
+      #randomRestaurantName
+      {
+      position:absolute;
+      top:55%;
+      left:40%;
+      font-family:Tahoma;
+      font-size:30px;
+      }
+      #randomRestaurantPhone
+      {
+      position:absolute;
+      top:65%;
+      left:40%;
+      font-family:Tahoma;
+      font-size:21px;
+      }
+      #randomRestaurantAddress
+      {
+      position:absolute;
+      top:70%;
+      left:40%;
+      font-family:Tahoma;
+      font-size:21px;
+      }
+      
       #Regenerating
       {
       position:absolute;
@@ -107,31 +140,6 @@ html
       {
       background-color:#53b4fd;
       color: white;
-      }
-      
-      #randomRestaurantName
-      {
-      position:absolute;
-      top:50%;
-      left:40%;
-      font-family:Tahoma;
-      font-size:30px;
-      }
-      #randomRestaurantPhone
-      {
-      position:absolute;
-      top:60%;
-      left:40%;
-      font-family:Tahoma;
-      font-size:21px;
-      }
-      #randomRestaurantAddress
-      {
-      position:absolute;
-      top:65%;
-      left:40%;
-      font-family:Tahoma;
-      font-size:21px;
       }
       
   body
@@ -166,7 +174,7 @@ html
     script(language='JavaScript').
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       var randomIndex = Math.floor(Math.random() * (testArray.length));
-
+      img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
       document.getElementById("randomRestaurantName").innerHTML =testArray[randomIndex].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[randomIndex].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[randomIndex].location.address1;
