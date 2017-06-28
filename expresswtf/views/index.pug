@@ -326,7 +326,7 @@ html
 
       function validateForm()
       {
-        var x = document.forms["InventoryList"]["ZipCode"].value;
+	var x = document.getElementById("ZipCode").value;
 	if (x.length != 5)
 	{
 	  window.alert("Invalid Zip Code");
