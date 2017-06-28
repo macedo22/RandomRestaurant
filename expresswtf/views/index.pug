@@ -295,12 +295,16 @@ html
         var InvForm = document.forms.InventoryList;
         var SelBranchVal = "";
         var x = 0;
-        var results = []; //results meaning the zipcode
+        var results = []; //results contain digits for zipcode
         // Get the value of the input field with id="ZipCode"
         //results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
         if (results[0].length !== 5)
         {
           window.alert("Please enter in a valid zip code");
+        }
+        else if(results[0].length ===0)
+        {
+          window.alert("Please enter your zip code");
         }
         else if(results[1].length ===0)
         {
