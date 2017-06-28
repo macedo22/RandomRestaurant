@@ -14,6 +14,14 @@ html
 
       var index=0;
       
+      var img = new Image(130,30);
+      img.src = images;
+      img.onclick = function()
+      {
+          window.location.href = address;
+      }
+      document.body.appendChild(img);
+      
     title What the Food!?
     meta(charset='windows-1252')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -204,13 +212,7 @@ html
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
-      var img = new Image(130,30);
-      img.src = images;
-      img.onclick = function()
-      {
-          window.location.href = address;
-      }
-      document.body.appendChild(img);
+      
       
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
