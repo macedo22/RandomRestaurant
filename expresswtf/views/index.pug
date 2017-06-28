@@ -226,7 +226,8 @@ html
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
-      
+      var link =testArray[index].url;
+      //document.write(link);
       //var element = document.createElement("a");
       //element.setAttribute("href", link);
       //element.innerHTML = "Find me on Yelp!";
@@ -302,8 +303,6 @@ html
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
         document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
         document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-        var link =testArray[index].url;
-        document.write(link);
         index++;
         Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
