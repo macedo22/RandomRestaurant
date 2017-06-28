@@ -22,12 +22,14 @@ html
       background-size: 550px 320px;
       background-position: 50% 5%;
       }
+      
       #YelpLogo
       {
       position:absolute;
       top:37%;
       left:60%;
       }
+      
       #Location
       {
       position:absolute;
@@ -36,6 +38,7 @@ html
       width:100px;
       height:15px;
       }
+      
       #ZipCode
       {
       position:absolute;
@@ -49,6 +52,7 @@ html
       border: solid 5px #53b4fd;
       transition:box-shadow 0.3s, border 0.3s;
       }
+      
       #INeed
       {
       position:absolute;
@@ -57,6 +61,7 @@ html
       width:100px;
       height:15px;
       }
+      
       #FormCategories
       {
       position:absolute;
@@ -70,6 +75,7 @@ html
       width:146px;
       transition:box-shadow 0.3s, border 0.3s;
       }
+      
       #FeedMe
       {
       position:absolute;
@@ -84,11 +90,13 @@ html
       border:solid 5px #53b4fd;
       cursor:pointer;
       }
+      
       #FeedMe:hover
       {
       background-color:#53b4fd;
       color: white;
       }
+      
       #getResults
       {
       position:absolute;
@@ -97,6 +105,7 @@ html
       font-family:Helvetica;
       font-size:20px;
       }
+      
       #ResultImg
       {
       position:absolute;
@@ -105,6 +114,7 @@ html
       width:100px;
       height:15px;
       }
+      
       #randomRestaurantName
       {
       position:absolute;
@@ -113,6 +123,7 @@ html
       font-family:Helvetica;
       font-size:30px;
       }
+      
       #randomRestaurantPhone
       {
       position:absolute;
@@ -121,6 +132,7 @@ html
       font-family:Helvetica;
       font-size:21px;
       }
+      
       #randomRestaurantAddress
       {
       position:absolute;
@@ -129,6 +141,7 @@ html
       font-family:Helvetica;
       font-size:21px;
       }
+      
       #randomRestaurantPrice
       {
       position:absolute;
@@ -137,6 +150,13 @@ html
       font-family:Helvetica;
       color: green;
       font-size:21px;
+      }
+      
+      #ratings
+      {
+      position:absolute;
+      top:70%;
+      left:60%;
       }
       #noMoreResults
       {
@@ -147,6 +167,7 @@ html
       color: red;
       font-size:30px;
       }
+      
       #findOnYelp
       {
       position:absolute;
@@ -155,6 +176,7 @@ html
       font-family:Helvetica;
       font-size:20px;
       }
+      
       #randomPhotoUrl
       {
       position:absolute;
@@ -218,9 +240,12 @@ html
     p#ratings
     
     a#randomPageLink(href='#')
+      img#ratings(src='', style='height:50px;')
+    
+    a#randomPageLink(href='#')
         img#randomPhotoUrl(src='', style='height:200px;')
    
-   img#ratings(src='', style='width:50px')
+   
     
     script(language='JavaScript').
      
@@ -231,9 +256,9 @@ html
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-      document.getElementById("ratings").src =testArray[index].rating_img_url_small;
       document.getElementById("randomPageLink").href =testArray[index].url;
       document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
+      document.getElementById("ratings").src =testArray[index].rating_img_url_small;
       
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
