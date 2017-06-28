@@ -224,17 +224,15 @@ html
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
       document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
       
+      var link = document.getElementById("findOnYelp").innerHTML = testArray[index].url;
+      document.write('<a href="' + link + '">Find Me on Yelp!</a>');
+      
       //Testing Find me on Yelp!
       //document.getElementById("findOnYelp").innerHTML = "Find me on Yelp!";
       //document.getElementById("findOnYelp").innerHTML = testArray[index].url;
       
       //var a = document.getElementById("findOnYelp");
       //a.href = testArray[index].url
-      
-      script.
-	      var link = document.getElementById("findOnYelp").innerHTML = testArray[index].url;
-      script.
-	      document.write('<a href="' + link + '">Find Me on Yelp!</a>');
       
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
