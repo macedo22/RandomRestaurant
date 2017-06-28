@@ -238,10 +238,10 @@ html
     img#ratings
     p#noMoreResults
     p#findOnYelp
-    p#ratings
     
     
-    img#ratings(src='', style='height:50px;')
+    
+    //img#ratings(src='', style='height:50px;')
     
     a#randomPageLink(href='#')
         img#randomPhotoUrl(src='', style='height:200px;')
@@ -260,7 +260,7 @@ html
       document.getElementById("ratings").src ="/images/large_"+ testArray[index].rating +".png";
       document.getElementById("randomPageLink").href =testArray[index].url;
       document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
-      document.getElementById("ratings").src =testArray[index].rating_img_url_small;
+      //document.getElementById("ratings").src =testArray[index].rating_img_url_small;
       
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
