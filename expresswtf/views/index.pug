@@ -196,7 +196,7 @@ html
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
-    form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
+    form#FormCategories(name='InventoryList', method='post', onsubmit='return validateForm();, action='', enctype='application/json')
       input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', required='')
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
@@ -324,3 +324,16 @@ html
         }
       }
 
+      function validateForm()
+      {
+        var x = document.forms["InventoryList"]["ZipCode"].value;
+	if (x.length != 5)
+	{
+	  window.alert("Invalid Zip Code");
+	  return false;
+	}
+	else
+	{
+	  return true;
+	}
+      }
