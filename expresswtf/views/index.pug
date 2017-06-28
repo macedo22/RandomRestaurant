@@ -212,6 +212,9 @@ html
     p#noMoreResults
     p#findOnYelp
     
+    var link =testArray[index].url;
+    a#link(href='') Find me on yelp!
+    
     script(language='JavaScript').
      
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
@@ -226,9 +229,9 @@ html
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       
-      //var link =testArray[index].url;
-      //a#link(href='') Find me on yelp!
-      //document.getElementById.href(link='link') = link;
+     
+      
+      document.getElementById.href(link='link') = link;
       //document.getElementById("findOnYelp").innerHTML ="Find me on yelp!";
       
       /*var img = new Image(130,30);
