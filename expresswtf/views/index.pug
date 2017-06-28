@@ -230,6 +230,26 @@ html
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       
+      switch(rating)
+      {
+          case 3.5:
+              img = new Image;
+              img.src = "/image/large_3.png";
+              img.onclick = function()
+              {
+                  window.location.href = src;
+              }
+              document.body.appendChild(img);
+              break;
+          case 4:
+              break;
+          case 4.5:
+              break;
+          case 5:
+              break;
+       }
+         
+      
       //document.write(link);
       //var element = document.createElement("a");
       //element.setAttribute("href", link);
