@@ -7,6 +7,9 @@ html
       var randomName;
       var matchesArray;
       
+var alpha = "[ A-Za-z]";
+var numeric = "[0-9]"; 
+var alphanumeric = "[ A-Za-z0-9]"; 
       //var rating = testArray[randomIndex].rating;
       var rating;
       var images = "/images/Powered_By_Yelp.png";
@@ -194,9 +197,6 @@ html
     script(language='JavaScript').
      
       <!--This function prevents the user from inputting letters as the zipcode-->
-var alpha = "[ A-Za-z]";
-var numeric = "[0-9]"; 
-var alphanumeric = "[ A-Za-z0-9]"; 
 
 function onKeyValidate(e,charVal){
     var keynum;
@@ -212,7 +212,7 @@ function onKeyValidate(e,charVal){
     }
     var keychar = String.fromCharCode(keynum);
     if (!validChars.test(keychar) && !keyChars.test(keychar))   {
-        return false
+        return false;
     } else{
         return keychar;
     }
