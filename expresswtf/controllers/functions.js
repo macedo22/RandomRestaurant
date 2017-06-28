@@ -39,7 +39,7 @@ exports.httpRequest=function(req,res,next){
         
         var categoriesInput;
         var zipInput=req.body.ZipCode;
-        if (req.body.SelBranch===NULL){
+        if (req.body.SelBranch===null){
             categoriesInput==="restaurants";
         }
         else{
@@ -51,7 +51,7 @@ exports.httpRequest=function(req,res,next){
     const searchRequest = {
         location: zipInput,
         categories: categoriesInput,
-        limit: numberOfResults,
+        limit: numberOfResults
     };
     
    
