@@ -225,11 +225,11 @@ html
    
     
     script(language='JavaScript').
+      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       while (testArray[index].rating < 3)
       {
         index++;
       }
-      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
