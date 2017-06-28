@@ -13,7 +13,6 @@ html
       //var address = "https://www.yelp.com";
       
       var index=0
-      var rating = testArray[index].rating;
       var link =testArray[index].url;
       
     title What the Food!?
@@ -232,31 +231,23 @@ html
 
       //document.getElementById("findOnYelp").innerHTML = "Find me on Yelp!";
       //document.getElementById("findOnYelp").href = "testArray[index].url";
-
-
+      
+      //Testing Find me on Yelp!
+      //document.getElementById("findOnYelp").innerHTML = "Find me on Yelp!";
+      //document.getElementById("findOnYelp").innerHTML = testArray[index].url;
+      
+      //var a = document.getElementById("findOnYelp");
+      //a.href = testArray[index].url
+      
+      //script.
+	      //var link = document.getElementById("findOnYelp").innerHTML = testArray[index].url;
+      //script.
+	     // document.write('<a href="' + link + '">Find Me on Yelp!</a>');
+      
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       
-      switch(rating)
-      {
-          case 3.5:
-              var img = new Image;
-              img.src = "/images/large_3.png";
-              //img.onclick = function()
-              //{
-                  //window.location.href = src;
-              //}
-              document.body.appendChild(img);
-              break;
-          case 4:
-              break;
-          case 4.5:
-              break;
-          case 5:
-              break;
-       }
-         
       
       //document.write(link);
       //var element = document.createElement("a");
@@ -268,13 +259,6 @@ html
       //document.getElementById.href(link='link') = link;
       //document.getElementById("findOnYelp").innerHTML ="Find me on yelp!";
       
-      /*var img = new Image(130,30);
-      img.src = images;
-      img.onclick = function()
-      {
-          window.location.href = address;
-      }
-      document.body.appendChild(img);*/
       
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
