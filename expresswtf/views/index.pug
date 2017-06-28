@@ -235,6 +235,7 @@ html
     p#randomRestaurantCity
     p#randomRestaurantPrice
     p#randomResetaurantImage
+    img#ratings
     p#noMoreResults
     p#findOnYelp
     p#ratings
@@ -256,6 +257,7 @@ html
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+      document.getElementById("ratings").src ="/images/large_"+ testArray[index].rating +".png";
       document.getElementById("randomPageLink").href =testArray[index].url;
       document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
       document.getElementById("ratings").src =testArray[index].rating_img_url_small;
@@ -331,8 +333,8 @@ html
         document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
         document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-        //document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-
+        //document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating
+        document.getElementById("ratings").src ="/images/large_"+ testArray[index].rating +".png";
         document.getElementById("randomPageLink").href =testArray[index].url;
         document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
         index++;
