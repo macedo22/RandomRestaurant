@@ -172,7 +172,7 @@ var alphanumeric = "[ A-Za-z0-9]";
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
-      input#ZipCode(type='text', onkeypress='onKeyValidate(event);', name='ZipCode', placeholder='#####', align='right', required='')
+      input#ZipCode(type='text', name='ZipCode', placeholder='#####', align='right', required='')
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
         option(value='breakfast_brunch') Breakfast
@@ -195,28 +195,6 @@ var alphanumeric = "[ A-Za-z0-9]";
     p#noMoreResults
     
     script(language='JavaScript').
-     
-      <!--This function prevents the user from inputting letters as the zipcode-->
-
-function onKeyValidate(evt){
-    var keynum;
-    var keyChars = /[\x00\x08]/;
-    var validChars = new RegExp(charVal);
-    if(window.event)
-    {
-        keynum = e.keyCode;
-    }
-    else if(e.which)
-    {
-        keynum = e.which;
-    }
-    var keychar = String.fromCharCode(keynum);
-    if (!validChars.test(keychar) && !keyChars.test(keychar))   {
-        return false;
-    } else{
-        return keychar;
-    }
-      }
       
       //GetInventory gets the ZipCode & Categories
       function GetInventory()
