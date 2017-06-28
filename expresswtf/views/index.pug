@@ -200,16 +200,16 @@ html
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
       document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-      document.getElementById("randomRestaurantImage").innerHTML =testArray[index].image_url;
-      document.getElementById("randomRestaurantImageURL").innerHTML =testArray[index].url;
-	var image1 = new Image();
-	var image1.src = testArray[index].image_url;
+//      document.getElementById("randomRestaurantImage").innerHTML =testArray[index].image_url;
+  //    document.getElementById("randomRestaurantImageURL").innerHTML =testArray[index].url;
+//	var image1 = new Image();
+//	var image1.src = testArray[index].image_url;
 //	var address1 = testArray[index].url;
-	image1.onclick = function()
-	{
-		window.location.href = testArray[index].url;
-	}
-	document.body.appendChild(image1);
+//	image1.onclick = function()
+//	{
+//		window.location.href = testArray[index].url;
+//	}
+//	document.body.appendChild(image1);
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
