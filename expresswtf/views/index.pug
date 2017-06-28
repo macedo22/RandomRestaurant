@@ -225,6 +225,10 @@ html
    
     
     script(language='JavaScript').
+      while(testArray[index].rating < 3)
+      {
+        index++;
+      }
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
@@ -292,6 +296,10 @@ html
         //var randomIndex = Math.floor(Math.random() * (testArray.length));
 
         if(index<testArray.length){
+          while(testArray[index].rating < 3)
+          {
+            index++;
+          }
         document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
         document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
