@@ -7,15 +7,12 @@ html
       var randomName;
       var matchesArray;
       
-var alpha = "[ A-Za-z]";
-var numeric = "[0-9]"; 
-var alphanumeric = "[ A-Za-z0-9]"; 
       //var rating = testArray[randomIndex].rating;
       var rating;
       var images = "/images/Powered_By_Yelp.png";
       var address = "https://www.yelp.com";
 
-      var index=0;
+      var index=0
       
     title What the Food!?
     meta(charset='windows-1252')
@@ -27,6 +24,12 @@ var alphanumeric = "[ A-Za-z0-9]";
       background-repeat: no-repeat;
       background-size: 550px 320px;
       background-position: 50% 5%;
+      }
+      #YelpLogo
+      {
+      position:absolute;
+      top:30%;
+      left:60%;
       }
       #Location
       {
@@ -167,12 +170,12 @@ var alphanumeric = "[ A-Za-z0-9]";
     //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
     
     a(href='https://www.yelp.com')
-    img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:80px;height:50px;')
+      img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:80px;height:50px;')
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
-      input#ZipCode(type='text', name='ZipCode', placeholder='#####', align='right', required='')
+      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', required='')
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
         option(value='breakfast_brunch') Breakfast
@@ -195,6 +198,39 @@ var alphanumeric = "[ A-Za-z0-9]";
     p#noMoreResults
     
     script(language='JavaScript').
+     
+      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
+      
+      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
+      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
+      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+      //document.getElementById("randomRestaurantImage").innerHTML = testArray[index]."image_url";
+      index++;
+      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      
+      /*var img = new Image(130,30);
+      img.src = images;
+      img.onclick = function()
+      {
+          window.location.href = address;
+      }
+      document.body.appendChild(img);*/
+      
+      <!--This function prevents the user from inputting letters as the zipcode-->
+      function validate(evt)
+      {
+      var theEvent = evt || window.event;
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode( key );
+      var regex = /[0-9]|\\./;
+      if( !regex.test(key) )
+      {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+      }
+      }
       
       //GetInventory gets the ZipCode & Categories
       function GetInventory()
@@ -209,7 +245,7 @@ var alphanumeric = "[ A-Za-z0-9]";
         {
           window.alert("Please enter in a valid zip code");
         }
-        else if(results.length === 1)
+        else if(results[1].length ===0)
         {
            window.alert("Please select a food category"); 
         }
@@ -219,32 +255,14 @@ var alphanumeric = "[ A-Za-z0-9]";
           {
             if (InvForm.SelBranch[x].selected)
             {
-              //results.push(InvForm.SelBranch[x].value); //Displays category(ies) selected (for testing purposes)
+              //results.push(InvForm.SelBranch[x].value); Displays category(ies) selected (for testing purposes)
               
             }
           }
           result = results;
-          //document.getElementById("getResults").innerHTML = result;
+          document.getElementById("getResults").innerHTML = result;
       }
       }
-      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      
-      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
-      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
-      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-      index++;
-      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
-      
-      var img = new Image(80,30);
-      img.src = images;
-      img.onclick = function()
-      {
-          window.location.href = address;
-      }
-      document.body.appendChild(img);
-      
       
       //Regenerate gets a new restaurant to display when regenerate button is clicked
       function Regenerate()
@@ -267,3 +285,4 @@ var alphanumeric = "[ A-Za-z0-9]";
             document.getElementById("noMoreResults").innerHTML ="No more fudz";
         }
       }
+
