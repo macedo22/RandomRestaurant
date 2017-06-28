@@ -215,7 +215,7 @@ html
     a#randomPageLink(href='#')
         img#randomPhotoUrl(src='', style='height:300px;')
 
-    a#findMeOnYelp(href='#') Visit our HTML tutorial
+    a#findMeOnYelp(href='#')p#findMeText
    
     
     script(language='JavaScript').
@@ -229,7 +229,9 @@ html
       document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
       document.getElementById("randomPageLink").href =testArray[index].url;
       document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
-      document.getElementById("randomPageLink").href =testArray[index].url;
+      document.getElementById("findMeOnYelp").href =testArray[index].url;
+      document.getElementById("findMeText").innerHTML= "Find me on yelp!";
+      
       
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
@@ -310,6 +312,10 @@ html
         document.getElementById("randomPageLink").href =testArray[index].url;
         document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
         document.getElementById("randomPageLink").href =testArray[index].url;
+        document.getElementById("findMeOnYelp").href =testArray[index].url;
+        document.getElementById("findMeText").innerHTML= "Find me on yelp!";
+
+
         index++;
         Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
