@@ -213,6 +213,9 @@ html
     p#randomRestaurantRating
     p#noMoreResults
     p#findOnYelp
+    
+    a#randomPageLink(href='#')
+        img#randomPhotoUrl(src='')
    
     
     script(language='JavaScript').
@@ -224,8 +227,13 @@ html
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
       document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-      document.getElementById("findOnYelp").innerHTML = "Find me on Yelp!";
-      document.getElementById("findOnYelp").href = "testArray[index].url";
+      document.getElementById("randomPageLink").href =testArray[index].url;
+      document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
+
+      //document.getElementById("findOnYelp").innerHTML = "Find me on Yelp!";
+      //document.getElementById("findOnYelp").href = "testArray[index].url";
+
+
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
@@ -326,6 +334,9 @@ html
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
         document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
         document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+
+        document.getElementById("randomPageLink").href =testArray[index].url;
+        document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
         index++;
         Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
