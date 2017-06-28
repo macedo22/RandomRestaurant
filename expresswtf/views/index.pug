@@ -217,7 +217,11 @@ html
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
+<<<<<<< HEAD
       input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', minlength="5", maxlength="5" required='')
+=======
+      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', required='', align='right', minlength="5", maxlength="5")
+>>>>>>> 6a5522034a7deec442ec8afde0d0bc58b81f8c91
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
         option(value='breakfast_brunch') Breakfast
@@ -295,7 +299,7 @@ html
         var InvForm = document.forms.InventoryList;
         var SelBranchVal = "";
         var x = 0;
-        var results = []; //results meaning the zipcode
+        var results = []; //results contain digits for zipcode
         // Get the value of the input field with id="ZipCode"
         //results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
         if (results[0].length !== 5)
