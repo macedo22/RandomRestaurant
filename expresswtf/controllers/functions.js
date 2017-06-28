@@ -45,7 +45,8 @@ exports.httpRequest=function(req,res,next){
     const searchRequest = {
         location: zipInput,
         categories: categoriesInput,
-        limit: numberOfResults
+        limit: numberOfResults,
+        radius: 10
     };
     
    
