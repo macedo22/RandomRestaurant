@@ -6,13 +6,10 @@ html
       var choice;
       var randomName;
       var matchesArray;
-      
-      //var rating = testArray[randomIndex].rating;
-      var rating;
-      var images = "/images/Powered_By_Yelp.png";
-      var address = "https://www.yelp.com";
 
-      var index=0
+      
+      var index=0;
+      //var link =testArray[index].url;
       
     title What the Food!?
     meta(charset='windows-1252')
@@ -28,7 +25,7 @@ html
       #YelpLogo
       {
       position:absolute;
-      top:30%;
+      top:37%;
       left:60%;
       }
       #Location
@@ -141,6 +138,33 @@ html
       color: green;
       font-size:21px;
       }
+      #noMoreResults
+      {
+      position:absolute;
+      top:50%;
+      left:40%;
+      font-family:Helvetica;
+      color: red;
+      font-size:30px;
+      }
+      #findOnYelp
+      {
+      position:absolute;
+      top:85%;
+      left:60%;
+      font-family:Helvetica;
+      font-size:20px;
+      }
+      #randomPhotoUrl
+      {
+      position:absolute;
+      top:60%;
+      left:70%;
+      width:40px;
+      height:40px;
+      border:solid 3px #53b4fd;
+      }
+      
       
       
       #Regenerating
@@ -167,8 +191,6 @@ html
       }
       
   body
-    //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
-    
     a(href='https://www.yelp.com')
       img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:80px;height:50px;')
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
@@ -196,6 +218,11 @@ html
     p#randomResetaurantImage
     p#randomRestaurantRating
     p#noMoreResults
+    p#findOnYelp
+    
+    a#randomPageLink(href='#')
+        img#randomPhotoUrl(src='', style='height:300px;')
+   
     
     script(language='JavaScript').
      
@@ -205,18 +232,26 @@ html
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-      //document.getElementById("randomRestaurantImage").innerHTML = testArray[index]."image_url";
+      //document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+      document.getElementById("randomPageLink").href =testArray[index].url;
+      document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
+      
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
-      var img = new Image();
-      img.src = testArray[index-1].image_url;
-      img.onclick = function()
-      {
-          window.location.href = testArray[index-1].url;
-      }
-      document.body.appendChild(img);
+      
+      
+      
+      //document.write(link);
+      //var element = document.createElement("a");
+      //element.setAttribute("href", link);
+      //element.innerHTML = "Find me on Yelp!";
+      //document.body.appendChild(element);
+      
+      //a#link(href='') Find me on yelp!
+      //document.getElementById.href(link='link') = link;
+      //document.getElementById("findOnYelp").innerHTML ="Find me on yelp!";
+      
       
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
@@ -232,6 +267,37 @@ html
       }
       }
       
+      //GetInventory gets the ZipCode & Categories
+      function GetInventory()
+      {
+        var InvForm = document.forms.InventoryList;
+        var SelBranchVal = "";
+        var x = 0;
+        var results = []; //results meaning the zipcode
+        // Get the value of the input field with id="ZipCode"
+        //results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
+        if (results[0].length !== 5)
+        {
+          window.alert("Please enter in a valid zip code");
+        }
+        else if(results[1].length ===0)
+        {
+           window.alert("Please select a food category"); 
+        }
+        else
+        {
+          for (x=0;x<InvForm.SelBranch.length;x++)
+          {
+            if (InvForm.SelBranch[x].selected)
+            {
+              //results.push(InvForm.SelBranch[x].value); Displays category(ies) selected (for testing purposes)
+              
+            }
+          }
+          result = results;
+          document.getElementById("getResults").innerHTML = result;
+      }
+      }
       
       //Regenerate gets a new restaurant to display when regenerate button is clicked
       function Regenerate()
@@ -244,21 +310,17 @@ html
         document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
         document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-        document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+        //document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+
+        document.getElementById("randomPageLink").href =testArray[index].url;
+        document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
         index++;
         Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
-      var img = new Image();
-      img.src = testArray[index-1].image_url;
-      img.onclick = function()
-      {
-          window.location.href = testArray[index-1].url;
-      }
-      document.body.appendChild(img);
       }
       
         else{
             Regenerating.style.visibility = "hidden"; //hides the REGENERATE button when results done
-            document.getElementById("noMoreResults").innerHTML ="No more fudz";
+            document.getElementById("noMoreResults").innerHTML ="No more results matching search criteria";
         }
       }
 
