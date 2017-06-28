@@ -12,15 +12,7 @@ html
       var images = "/images/Powered_By_Yelp.png";
       var address = "https://www.yelp.com";
 
-      var index=0;
-      
-      var img = new Image(130,30);
-      img.src = images;
-      img.onclick = function()
-      {
-          window.location.href = address;
-      }
-      document.body.appendChild(img);
+      var index=0
       
     title What the Food!?
     meta(charset='windows-1252')
@@ -172,7 +164,7 @@ html
     //img#ResultImg(src='/images/result.png', alt='Result: ', style='width:170px;height:60px;')
     
     a(href='https://www.yelp.com')
-    img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:80px;height:50px;')
+      img#YelpLogo(src='/images/Yelp_trademark_RGB_outline.png', style='width:80px;height:50px;')
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
@@ -212,7 +204,13 @@ html
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
-      
+      /*var img = new Image(130,30);
+      img.src = images;
+      img.onclick = function()
+      {
+          window.location.href = address;
+      }
+      document.body.appendChild(img);*/
       
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
