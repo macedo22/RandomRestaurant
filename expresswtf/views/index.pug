@@ -211,10 +211,11 @@ html
     p#randomResetaurantImage
     p#randomRestaurantRating
     p#noMoreResults
-    p#findOnYelp
     
     a#randomPageLink(href='#')
         img#randomPhotoUrl(src='', style='height:300px;')
+
+    a#findMeOnYelp(href='#') Visit our HTML tutorial
    
     
     script(language='JavaScript').
@@ -228,6 +229,7 @@ html
       document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
       document.getElementById("randomPageLink").href =testArray[index].url;
       document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
+      document.getElementById("randomPageLink").href =testArray[index].url;
       
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
@@ -307,6 +309,7 @@ html
 
         document.getElementById("randomPageLink").href =testArray[index].url;
         document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
+        document.getElementById("randomPageLink").href =testArray[index].url;
         index++;
         Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
