@@ -19,7 +19,7 @@ const clientSecret = 'sU7Db2PGwyTiFk338fP1YX7CSlpTyp8NZ7ap3wvOILXLV8yK3KDN5tR3oO
     
     function shuffle(array) {
     if(array.length===0){
-        res.send("We did not find any matches for this search criteria! :(");
+        return;
     }
         
         for (var i = array.length - 1; i > 0; i--) {
@@ -39,7 +39,7 @@ exports.httpRequest=function(req,res,next){
         
         var categoriesInput;
         var zipInput=req.body.ZipCode;
-        if (req.body.SelBranch===""){
+        if (req.body.SelBranch===NULL){
             categoriesInput==="restaurants";
         }
         else{
@@ -51,7 +51,7 @@ exports.httpRequest=function(req,res,next){
     const searchRequest = {
         location: zipInput,
         categories: categoriesInput,
-        limit: numberOfResults
+        limit: numberOfResults,
     };
     
    
