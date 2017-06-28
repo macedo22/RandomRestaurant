@@ -11,8 +11,10 @@ html
       var rating;
       //var images = "/images/Powered_By_Yelp.png";
       //var address = "https://www.yelp.com";
-
+      
       var index=0
+      
+      var link =testArray[index].url;
       
     title What the Food!?
     meta(charset='windows-1252')
@@ -200,6 +202,10 @@ html
         option(value='vegan') Vegan
       input#FeedMe.bnotes(type='submit', name='ViewReport', value='Feed Me!', onclick='GetInventory();')
     button#Regenerating(onclick='Regenerate()') Regenerate!
+    
+    a(href=link)
+      p#link(style='width:80px;height:50px;')
+
 
     p#randomRestaurantName
     p#randomRestaurantPhone
@@ -226,7 +232,7 @@ html
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
-      var link =testArray[index].url;
+      
       //document.write(link);
       //var element = document.createElement("a");
       //element.setAttribute("href", link);
