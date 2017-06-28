@@ -217,11 +217,7 @@ html
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
-<<<<<<< HEAD
-      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', minlength="5", maxlength="5" required='')
-=======
       input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', required='', align='right', minlength="5", maxlength="5")
->>>>>>> 6a5522034a7deec442ec8afde0d0bc58b81f8c91
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
         option(value='breakfast_brunch') Breakfast
@@ -355,4 +351,3 @@ html
             document.getElementById("noMoreResults").innerHTML ="No more results matching search criteria";
         }
       }
-
