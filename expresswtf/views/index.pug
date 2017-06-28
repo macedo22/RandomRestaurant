@@ -247,6 +247,13 @@ html
         document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
         index++;
         Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      var img = new Image();
+      img.src = testArray[index-1].image_url;
+      img.onclick = function()
+      {
+          window.location.href = testArray[index-1].url;
+      }
+      document.body.appendChild(img);
       }
       
         else{
