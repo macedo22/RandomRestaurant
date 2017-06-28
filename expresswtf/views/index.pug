@@ -150,7 +150,14 @@ html
       color: red;
       font-size:40px;
       }
-      
+      #findOnYelp
+      {
+      position:absolute;
+      top:90%;
+      left:60%;
+      font-family:Helvetica;
+      font-size:22px;
+      }
       
       #Regenerating
       {
@@ -205,6 +212,7 @@ html
     p#randomResetaurantImage
     p#randomRestaurantRating
     p#noMoreResults
+    p#findOnYelp
     
     script(language='JavaScript').
      
@@ -218,6 +226,8 @@ html
       //document.getElementById("randomRestaurantImage").innerHTML = testArray[index]."image_url";
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      
+      document.getElementById("findOnYelp").innerHTML ="Find me on yelp!";
       
       /*var img = new Image(130,30);
       img.src = images;
