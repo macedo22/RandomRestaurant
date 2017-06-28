@@ -228,13 +228,10 @@ html
       
       
      
-      var link =testArray[index].url;
-      //document.write(link);
-     
+      var link =testArray[index-1].url;
       var element = document.createElement("a");
       element.setAttribute("href", link);
       element.innerHTML = "Find me on Yelp!";
-
       document.body.appendChild(element);
       //a#link(href='') Find me on yelp!
       //document.getElementById.href(link='link') = link;
