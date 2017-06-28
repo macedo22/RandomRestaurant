@@ -225,18 +225,18 @@ html
    
     
     script(language='JavaScript').
-     
-      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
-      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
-      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-      document.getElementById("ratings").src ="/images/large_"+ testArray[index].rating +".png";
-      document.getElementById("randomPageLink").href =testArray[index].url;
-      document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
+      Regenerating();
+      //var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
+      //document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
+      //document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
+      //document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
+      //document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+      //document.getElementById("ratings").src ="/images/large_"+ testArray[index].rating +".png";
+      //document.getElementById("randomPageLink").href =testArray[index].url;
+      //document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
       
-      index++;
-      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      //index++;
+      //Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       
       
