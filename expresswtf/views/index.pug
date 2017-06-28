@@ -299,7 +299,7 @@ html
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
         document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
         document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-        var link =testArray[index-1].url;
+        var link =testArray[index].url;
         var element = document.createElement("a");
         element.setAttribute("href", link);
         element.innerHTML = "Find me on Yelp!";
