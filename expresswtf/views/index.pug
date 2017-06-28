@@ -217,7 +217,6 @@ html
     p#randomRestaurantPrice
     p#randomResetaurantImage
     img#ratings
-    p#Ratings
     p#noMoreResults
     p#findOnYelp
     
@@ -228,13 +227,11 @@ html
     script(language='JavaScript').
      
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      var rate = "/images/large_"+ testArray[index].rating +".png";
       document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
       document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-      document.getElementById("ratings").innerHTML =rate;
-      document.getElementById("ratings").src =rate;
+      document.getElementById("ratings").src ="/images/large_"+ testArray[index].rating +".png";
       document.getElementById("randomPageLink").href =testArray[index].url;
       document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
       
@@ -293,7 +290,6 @@ html
       function Regenerate()
       {
         var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-        var rate = "/images/large_"+testArray[index].rating+".png";
         //var randomIndex = Math.floor(Math.random() * (testArray.length));
 
         if(index<testArray.length){
@@ -301,8 +297,7 @@ html
         document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
         document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-        document.getElementById("ratings").innerHTML =rate;
-        document.getElementById("ratings").src =rate;
+        document.getElementById("ratings").src ="/images/large_"+ testArray[index].rating +".png";
         document.getElementById("randomPageLink").href =testArray[index].url;
         document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
         index++;
