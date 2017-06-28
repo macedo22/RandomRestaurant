@@ -232,37 +232,6 @@ html
       }
       }
       
-      //GetInventory gets the ZipCode & Categories
-      function GetInventory()
-      {
-        var InvForm = document.forms.InventoryList;
-        var SelBranchVal = "";
-        var x = 0;
-        var results = []; //results meaning the zipcode
-        // Get the value of the input field with id="ZipCode"
-        //results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
-        if (results[0].length !== 5)
-        {
-          window.alert("Please enter in a valid zip code");
-        }
-        else if(results[1].length ===0)
-        {
-           window.alert("Please select a food category"); 
-        }
-        else
-        {
-          for (x=0;x<InvForm.SelBranch.length;x++)
-          {
-            if (InvForm.SelBranch[x].selected)
-            {
-              //results.push(InvForm.SelBranch[x].value); Displays category(ies) selected (for testing purposes)
-              
-            }
-          }
-          result = results;
-          document.getElementById("getResults").innerHTML = result;
-      }
-      }
       
       //Regenerate gets a new restaurant to display when regenerate button is clicked
       function Regenerate()
