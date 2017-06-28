@@ -217,7 +217,7 @@ html
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
-      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', minlength="5", maxlength="5")
+      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', required='', align='right', minlength="5", maxlength="5")
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
         option(value='breakfast_brunch') Breakfast
@@ -301,10 +301,6 @@ html
         if (results[0].length !== 5)
         {
           window.alert("Please enter in a valid zip code");
-        }
-        else if(results[0].length ===0)
-        {
-          window.alert("Please enter your zip code");
         }
         else if(results[1].length ===0)
         {
