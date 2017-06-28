@@ -196,7 +196,7 @@ html
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
-    form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
+    form#FormCategories(name='InventoryList', onsubmit='return GetInventory()',method='post', action='', enctype='application/json')
       input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', required='')
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
@@ -279,24 +279,12 @@ html
         if (results[0].length !== 5)
         {
           window.alert("Please enter in a valid zip code");
+	  return false;
         }
-        else if(results[1].length ===0)
-        {
-           window.alert("Please select a food category"); 
-        }
-        else
-        {
-          for (x=0;x<InvForm.SelBranch.length;x++)
-          {
-            if (InvForm.SelBranch[x].selected)
-            {
-              //results.push(InvForm.SelBranch[x].value); Displays category(ies) selected (for testing purposes)
-              
-            }
-          }
-          result = results;
-          document.getElementById("getResults").innerHTML = result;
-      }
+	else
+	{
+	  return true;
+	}
       }
       
       //Regenerate gets a new restaurant to display when regenerate button is clicked
