@@ -225,7 +225,6 @@ html
    
     
     script(language='JavaScript').
-      Regenerating();
       //var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       //document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
       //document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
@@ -308,5 +307,6 @@ html
             Regenerating.style.visibility = "hidden"; //hides the REGENERATE button when results done
             document.getElementById("noMoreResults").innerHTML ="No more results matching search criteria";
         }
+      Regenerating();
       }
 
