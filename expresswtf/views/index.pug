@@ -211,10 +211,10 @@ html
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       
       var img = new Image();
-      img.src = images;
+      img.src = testArray[index].image_url;
       img.onclick = function()
       {
-          window.location.href = address;
+          window.location.href = testArray[index].url;
       }
       document.body.appendChild(img);
       
