@@ -233,12 +233,12 @@ html
         var x = 0;
         var results = []; //results meaning the zipcode
         // Get the value of the input field with id="ZipCode"
-        //results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
+        results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
         if (results[0].length !== 5)
         {
           window.alert("Please enter in a valid zip code");
         }
-        else if(results[1].length ===0)
+        else if(results.length === 1)
         {
            window.alert("Please select a food category"); 
         }
@@ -248,12 +248,12 @@ html
           {
             if (InvForm.SelBranch[x].selected)
             {
-              //results.push(InvForm.SelBranch[x].value); Displays category(ies) selected (for testing purposes)
+              results.push(InvForm.SelBranch[x].value); //Displays category(ies) selected (for testing purposes)
               
             }
           }
           result = results;
-          document.getElementById("getResults").innerHTML = result;
+          //document.getElementById("getResults").innerHTML = result;
       }
       }
       
