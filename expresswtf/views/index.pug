@@ -251,11 +251,6 @@ html
       while (testArray[index].rating < 3)
       {
         index++;
-        if (index > 49)
-        {
-          break;
-        }
-
       }
 
       document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
@@ -330,6 +325,8 @@ html
       function Regenerate()
       {
         var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
+
+        if(index<testArray.length){
         while (testArray[index].rating < 3)
         {
           index++;
@@ -337,10 +334,7 @@ html
           {
             break;
           }
-
         }
-
-        if(index<testArray.length){
         document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
         document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
@@ -357,3 +351,4 @@ html
             document.getElementById("noMoreResults").innerHTML ="No more results matching search criteria";
         }
       }
+
