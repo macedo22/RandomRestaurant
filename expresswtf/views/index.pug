@@ -228,11 +228,7 @@ html
       
       
      
-      var link =testArray[index-1].url;
-      var element = document.createElement("a");
-      element.setAttribute("href", link);
-      element.innerHTML = "Find me on Yelp!";
-      document.body.appendChild(element);
+      
       //a#link(href='') Find me on yelp!
       //document.getElementById.href(link='link') = link;
       //document.getElementById("findOnYelp").innerHTML ="Find me on yelp!";
@@ -303,6 +299,11 @@ html
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
         document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
         document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+        var link =testArray[index-1].url;
+        var element = document.createElement("a");
+        element.setAttribute("href", link);
+        element.innerHTML = "Find me on Yelp!";
+      document.body.appendChild(element);
         index++;
         Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
