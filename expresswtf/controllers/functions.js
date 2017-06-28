@@ -40,7 +40,7 @@ exports.httpRequest=function(req,res,next){
         var categoriesInput;
         var zipInput=req.body.ZipCode;
         if (req.body.SelBranch===null){
-            categoriesInput==="restaurants";
+            categoriesInput="restaurants";
         }
         else{
             categoriesInput=req.body.SelBranch;
