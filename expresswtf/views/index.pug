@@ -22,12 +22,14 @@ html
       background-size: 550px 320px;
       background-position: 50% 5%;
       }
+      
       #YelpLogo
       {
       position:absolute;
       top:37%;
       left:60%;
       }
+      
       #Location
       {
       position:absolute;
@@ -36,6 +38,7 @@ html
       width:100px;
       height:15px;
       }
+      
       #ZipCode
       {
       position:absolute;
@@ -49,6 +52,7 @@ html
       border: solid 5px #53b4fd;
       transition:box-shadow 0.3s, border 0.3s;
       }
+      
       #INeed
       {
       position:absolute;
@@ -57,6 +61,7 @@ html
       width:100px;
       height:15px;
       }
+      
       #FormCategories
       {
       position:absolute;
@@ -70,6 +75,7 @@ html
       width:146px;
       transition:box-shadow 0.3s, border 0.3s;
       }
+      
       #FeedMe
       {
       position:absolute;
@@ -84,11 +90,13 @@ html
       border:solid 5px #53b4fd;
       cursor:pointer;
       }
+      
       #FeedMe:hover
       {
       background-color:#53b4fd;
       color: white;
       }
+      
       #getResults
       {
       position:absolute;
@@ -97,6 +105,7 @@ html
       font-family:Helvetica;
       font-size:20px;
       }
+      
       #ResultImg
       {
       position:absolute;
@@ -105,6 +114,7 @@ html
       width:100px;
       height:15px;
       }
+      
       #randomRestaurantName
       {
       position:absolute;
@@ -113,6 +123,7 @@ html
       font-family:Helvetica;
       font-size:30px;
       }
+      
       #randomRestaurantPhone
       {
       position:absolute;
@@ -121,6 +132,7 @@ html
       font-family:Helvetica;
       font-size:21px;
       }
+      
       #randomRestaurantAddress
       {
       position:absolute;
@@ -129,6 +141,7 @@ html
       font-family:Helvetica;
       font-size:21px;
       }
+      
       #randomRestaurantPrice
       {
       position:absolute;
@@ -138,6 +151,14 @@ html
       color: green;
       font-size:21px;
       }
+      
+      #ratings
+      {
+      position:absolute;
+      top:88%;
+      left:55%;
+      }
+      
       #noMoreResults
       {
       position:absolute;
@@ -147,6 +168,7 @@ html
       color: red;
       font-size:30px;
       }
+      
       #findOnYelp
       {
       position:absolute;
@@ -155,14 +177,12 @@ html
       font-family:Helvetica;
       font-size:20px;
       }
+      
       #randomPhotoUrl
       {
       position:absolute;
       top:60%;
-      left:70%;
-      width:40px;
-      height:40px;
-      border:solid 3px #53b4fd;
+      left:73%;
       }
       
       
@@ -171,7 +191,7 @@ html
       {
       position:absolute;
       visibility: hidden;
-      top:95%;
+      top:100%;
       left:55%;
       width:90px;
       height:40px;
@@ -196,8 +216,8 @@ html
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
-    form#FormCategories(name='InventoryList', onsubmit='return GetInventory()', method='post', action='', enctype='application/json')
-      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', required='')
+    form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
+      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', align='right', minlength="5", maxlength="5")
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
         option(value='breakfast_brunch') Breakfast
@@ -221,15 +241,18 @@ html
     p#findOnYelp
     
     a#randomPageLink(href='#')
-        img#randomPhotoUrl(src='', style='height:300px;')
+        img#randomPhotoUrl(src='', style='height:200px;')
+   
    
     
     script(language='JavaScript').
+     
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
       while (testArray[index].rating < 3)
       {
         index++;
       }
+
       document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
@@ -240,9 +263,6 @@ html
       
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
-      
-      
-      
       
       //document.write(link);
       //var element = document.createElement("a");
@@ -277,29 +297,40 @@ html
         var x = 0;
         var results = []; //results meaning the zipcode
         // Get the value of the input field with id="ZipCode"
-        results.push(document.getElementById("ZipCode").value);
+        //results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
         if (results[0].length !== 5)
         {
           window.alert("Please enter in a valid zip code");
-          return false;
+        }
+        else if(results[1].length ===0)
+        {
+           window.alert("Please select a food category"); 
         }
         else
         {
-          return true;
-        }
+          for (x=0;x<InvForm.SelBranch.length;x++)
+          {
+            if (InvForm.SelBranch[x].selected)
+            {
+              //results.push(InvForm.SelBranch[x].value); Displays category(ies) selected (for testing purposes)
+              
+            }
+          }
+          result = results;
+          document.getElementById("getResults").innerHTML = result;
+      }
       }
       
       //Regenerate gets a new restaurant to display when regenerate button is clicked
       function Regenerate()
       {
         var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-        //var randomIndex = Math.floor(Math.random() * (testArray.length));
+        while (testArray[index].rating < 3)
+        {
+          index++;
+        }
 
         if(index<testArray.length){
-          while (testArray[index].rating < 3)
-          {
-            index++;
-          }
         document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
         document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
