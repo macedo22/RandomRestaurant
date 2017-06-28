@@ -13,7 +13,7 @@ html
       //var address = "https://www.yelp.com";
       
       var index=0
-      var rating = testArray[randomIndex].rating;
+      
       var link =testArray[index].url;
       
     title What the Food!?
@@ -326,6 +326,7 @@ html
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
         document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
         document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+        var rating = testArray[index].rating;
         index++;
         Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
       }
