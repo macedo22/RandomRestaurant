@@ -193,24 +193,6 @@ html
     
     script(language='JavaScript').
      
-      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      
-      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
-      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
-      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
-      index++;
-      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
-      
-      var img = new Image(80,30);
-      img.src = images;
-      img.onclick = function()
-      {
-          window.location.href = address;
-      }
-      document.body.appendChild(img);
-      
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
       {
@@ -256,6 +238,24 @@ html
           //document.getElementById("getResults").innerHTML = result;
       }
       }
+      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
+      
+      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
+      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
+      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
+      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
+      document.getElementById("randomRestaurantRating").innerHTML =testArray[index].rating;
+      index++;
+      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
+      
+      var img = new Image(80,30);
+      img.src = images;
+      img.onclick = function()
+      {
+          window.location.href = address;
+      }
+      document.body.appendChild(img);
+      
       
       //Regenerate gets a new restaurant to display when regenerate button is clicked
       function Regenerate()
