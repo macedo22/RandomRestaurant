@@ -225,7 +225,7 @@ html
    
     
     script(language='JavaScript').
-      while(Number(testArray[index].rating) < 3)
+      while (testArray[index].rating < 3)
       {
         index++;
       }
@@ -296,7 +296,7 @@ html
         //var randomIndex = Math.floor(Math.random() * (testArray.length));
 
         if(index<testArray.length){
-          while(Number(testArray[index].rating) < 3)
+          while (testArray[index].rating < 3)
           {
             index++;
           }
