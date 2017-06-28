@@ -141,6 +141,14 @@ html
       color: green;
       font-size:21px;
       }
+      #noMoreResults
+      {
+      position:absolute;
+      top:55%;
+      left:40%;
+      font-family:Helvetica;
+      font-size:40px;
+      }
       
       
       #Regenerating
@@ -282,6 +290,6 @@ html
       
         else{
             Regenerating.style.visibility = "hidden"; //hides the REGENERATE button when results done
-            document.getElementById("noMoreResults").innerHTML ="No more fudz";
+            document.getElementById("noMoreResults").innerHTML ="No more results that match the search criteria";
         }
       }
