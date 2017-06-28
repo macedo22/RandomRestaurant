@@ -231,9 +231,10 @@ html
       //var a = document.getElementById("findOnYelp");
       //a.href = testArray[index].url
       
-        document.getElementById("findOnYelp").innerHTML = "
-      a(href='" + testArray[index].url + "') " + Find me on Yelp! + "
-        ";
+      script.
+	      var link = document.getElementById("findOnYelp").innerHTML = testArray[index].url;
+      script.
+	      document.write('<a href="' + link + '">Find Me on Yelp!</a>');
       
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
