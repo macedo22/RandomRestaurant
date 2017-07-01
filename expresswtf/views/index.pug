@@ -1,14 +1,13 @@
+//Home page
+
+
 doctype html
 html
   head
     script.
-      var result = [];
-      var choice;
       var randomName;
-      var matchesArray;
-
-      
-      var index=0;
+      var matchesArray;     
+      var index=0;       //used to iterate through search results
       
       
     title What the Food!?
@@ -205,8 +204,10 @@ html
     img#Location(src='/images/location.jpg', alt='Enter Your Location: ', style='width:180px;height:70px;')
     br
     img#INeed(src='/images/ineed.jpg', alt='Choose a category: ', style='width:170px;height:60px;')
+
+    //form takes user search criteria and submits post request router upon submitting
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
-      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', required='', align='right', minlength="5", maxlength="5")
+      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', required='', align='right', minlength="5", maxlength="5") //minlength and maxlength validate length of zipcode entered
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
         option(value='breakfast_brunch') Breakfast
@@ -215,9 +216,10 @@ html
         option(value='burgers') Burgers
         option(value='desserts') Dessert
         option(value='vegan') Vegan
-      input#FeedMe.bnotes(type='submit', name='ViewReport', value='Feed Me!', onclick='GetInventory();')
+      input#FeedMe.bnotes(type='submit', name='ViewReport', value='Feed Me!;')
     button#Regenerating(onclick='Regenerate()') Regenerate!
 
+    //tags to be rendered by Yelp search results and displayed on home page
     p#randomRestaurantName
     p#randomRestaurantPhone
     p#randomRestaurantAddress
@@ -230,17 +232,15 @@ html
     p#findOnYelp
     
     a#randomPageLink(href='#')
-        img#randomPhotoUrl(src='', style='height:200px;')
-   
-   
+        img#randomPhotoUrl(src='', style='height:200px;')  
     
-    script(language='JavaScript').
-     
-      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
+    script(language='JavaScript').    
+      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});  //receives Yelp response with search results
       while (testArray[index].rating < 3){
-        index++;
+        index++;                                                  //go to the next restaurant if rating is below 3
       }
 
+      //renders home page to display information on a random restaurant from response body
       document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
       document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
       document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
@@ -276,7 +276,8 @@ html
             break;
           }
         }
-
+        
+        //renders home page to display information on a random restaurant from response body
         document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
         document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
