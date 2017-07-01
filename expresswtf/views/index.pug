@@ -9,7 +9,7 @@ html
 
       
       var index=0;
-      //var link =testArray[index].url;
+      
       
     title What the Food!?
     meta(charset='windows-1252')
@@ -262,18 +262,7 @@ html
       document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
       
       index++;
-      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed
-      
-      //document.write(link);
-      //var element = document.createElement("a");
-      //element.setAttribute("href", link);
-      //element.innerHTML = "Find me on Yelp!";
-      //document.body.appendChild(element);
-      
-      //a#link(href='') Find me on yelp!
-      //document.getElementById.href(link='link') = link;
-      //document.getElementById("findOnYelp").innerHTML ="Find me on yelp!";
-      
+      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed          
       
       <!--This function prevents the user from inputting letters as the zipcode-->
       function validate(evt)
@@ -296,8 +285,7 @@ html
         var SelBranchVal = "";
         var x = 0;
         var results = []; //results contain digits for zipcode
-        // Get the value of the input field with id="ZipCode"
-        //results.push(document.getElementById("ZipCode").value); Displays zip code (for testing purposes)
+        
         if (results[0].length !== 5)
         {
           window.alert("Please enter in a valid zip code");
