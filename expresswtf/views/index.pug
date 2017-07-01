@@ -234,23 +234,7 @@ html
     a#randomPageLink(href='#')
         img#randomPhotoUrl(src='', style='height:200px;')  
     
-    script(language='JavaScript').    
-      var testArray=JSON.parse(!{JSON.stringify(matchesArray)});  //receives Yelp response with search results
-      while (testArray[index].rating < 3){
-        index++;                                                  //go to the next restaurant if rating is below 3
-      }
-
-      //renders home page to display information on a random restaurant from response body
-      document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
-      document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
-      document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
-      document.getElementById("randomRestaurantPrice").innerHTML =testArray[index].price;
-      document.getElementById("ratings").src ="/images/large_"+ testArray[index].rating +".png";
-      document.getElementById("randomPageLink").href =testArray[index].url;
-      document.getElementById("randomPhotoUrl").src =testArray[index].image_url;
-      
-      index++;
-      Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed          
+    script(language='JavaScript').        
       
       //This function prevents the user from inputting letters as the zipcode
       function validate(evt){
