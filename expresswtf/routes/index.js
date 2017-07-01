@@ -1,3 +1,7 @@
+/*Establishes a router that will match HTTP requests to the home page 
+ to the correct path.*/
+
+
 //imports
 var express = require('express');
 var router = express.Router();   //creates a router
@@ -9,6 +13,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { messageTest: '' });     //does nothing to home page
 });
 
+/*POST request for home page */
 router.post('/', functions_controller.httpRequest);      //receives post request from the form and sends its inputs to function httpRequest
 
 module.exports = router;
