@@ -10,7 +10,7 @@ var functions_controller=require('../controllers/functions');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { messageTest: '' });     //does nothing to home page
+  res.render('index', { messageTest: '' });     //renders home page into HTML
 });
 
 /*POST request for home page */
