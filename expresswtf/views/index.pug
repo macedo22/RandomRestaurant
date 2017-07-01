@@ -207,7 +207,7 @@ html
 
     //form takes user search criteria and submits post request router upon submitting
     form#FormCategories(name='InventoryList', method='post', action='', enctype='application/json')
-      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', required='', align='right', minlength="5", maxlength="5") //minlength and maxlength validate length of zipcode entered
+      input#ZipCode(type='text', onkeypress='validate(event)', name='ZipCode', placeholder='#####', required='', align='right', minlength="5", maxlength="5")
       select#select.bnotes(name='SelBranch', multiple='multiple', size='5')
         option(value='restaurants') All
         option(value='breakfast_brunch') Breakfast
