@@ -97,15 +97,6 @@ html
       color: white;
       }
       
-      #getResults
-      {
-      position:absolute;
-      top:50%;
-      left:40%;
-      font-family:Helvetica;
-      font-size:20px;
-      }
-      
       #ResultImg
       {
       position:absolute;
@@ -184,9 +175,7 @@ html
       top:60%;
       left:73%;
       }
-      
-      
-      
+               
       #Regenerating
       {
       position:absolute;
@@ -248,8 +237,7 @@ html
     script(language='JavaScript').
      
       var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
-      while (testArray[index].rating < 3)
-      {
+      while (testArray[index].rating < 3){
         index++;
       }
 
@@ -264,65 +252,31 @@ html
       index++;
       Regenerating.style.visibility = "visible"; //shows the REGENERATE button when results are displayed          
       
-      <!--This function prevents the user from inputting letters as the zipcode-->
-      function validate(evt)
-      {
-      var theEvent = evt || window.event;
-      var key = theEvent.keyCode || theEvent.which;
-      key = String.fromCharCode( key );
-      var regex = /[0-9]|\\./;
-      if( !regex.test(key) )
-      {
-      theEvent.returnValue = false;
-      if(theEvent.preventDefault) theEvent.preventDefault();
-      }
-      }
-      
-      //GetInventory gets the ZipCode & Categories
-      function GetInventory()
-      {
-        var InvForm = document.forms.InventoryList;
-        var SelBranchVal = "";
-        var x = 0;
-        var results = []; //results contain digits for zipcode
-        
-        if (results[0].length !== 5)
-        {
-          window.alert("Please enter in a valid zip code");
+      //This function prevents the user from inputting letters as the zipcode
+      function validate(evt){
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode( key );
+        var regex = /[0-9]|\\./;
+        if( !regex.test(key) ){
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) 
+                theEvent.preventDefault();
         }
-        else if(results[1].length ===0)
-        {
-           window.alert("Please select a food category"); 
-        }
-        else
-        {
-          for (x=0;x<InvForm.SelBranch.length;x++)
-          {
-            if (InvForm.SelBranch[x].selected)
-            {
-              //results.push(InvForm.SelBranch[x].value); Displays category(ies) selected (for testing purposes)
-              
-            }
-          }
-          result = results;
-          document.getElementById("getResults").innerHTML = result;
-      }
       }
       
       //Regenerate gets a new restaurant to display when regenerate button is clicked
-      function Regenerate()
-      {
+      function Regenerate(){
         var testArray=JSON.parse(!{JSON.stringify(matchesArray)});
 
         if(index<testArray.length){
-        while (testArray[index].rating < 3)
-        {
+        while (testArray[index].rating < 3){
           index++;
-          if (index > 49)
-          {
+          if (index > 49){
             break;
           }
         }
+
         document.getElementById("randomRestaurantName").innerHTML =testArray[index].name;
         document.getElementById("randomRestaurantPhone").innerHTML =testArray[index].display_phone;
         document.getElementById("randomRestaurantAddress").innerHTML =testArray[index].location.display_address;
