@@ -4,7 +4,7 @@
   "description": "Generate random restaurant",
   "main": "index.js",
   "scripts": {
-    "start": "node ./expresswtf/bin/www"
+    "start": "node ./expresswtf/bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
